@@ -1,0 +1,9 @@
+# robots.txt for https://muchezz.github.io/
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://muchezz.github.io/sitemap.xml
+
+# Disallow thank-you page from indexing
+Disallow: /thank-you.html
