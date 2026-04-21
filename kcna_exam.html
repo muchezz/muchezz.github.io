@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KCNA Exam Prep – Mucheru Maina</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  :root {
+    --accent:    #23badf;
+    --accent-dk: #17849e;
+    --bg:        #f7f7f7;
+    --white:     #ffffff;
+    --dark:      #2e2e2e;
+    --darker:    #323232;
+    --mid:       #efeeee;
+    --border:    #dde3e7;
+    --muted:     #888;
+    --text:      #2e2e2e;
+    --success:   #90a878;
+    --danger:    #f28281;
+    --warning:   #f3c649;
+    --radius:    6px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+  }
+
+  .screen { display: none; }
+  .screen.active { display: flex; flex-direction: column; }
+
+  /* ─── NAV ─── */
+  .top-nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-sep { color: var(--border); }
+  .nav-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ─── HOME ─── */
+  #home { min-height: 100vh; }
+
+  .hero {
+    background: var(--dark);
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+  }
+
+  .home-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .stat-cell {
+    background: var(--white);
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-lbl {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  .config-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+  }
+
+  .config-header {
+    background: var(--mid);
+    padding: 0.6rem 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .config-body { padding: 1rem 1.1rem; }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .sec-btn {
+    background: var(--mid);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.55rem 0.8rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    transition: all 0.15s;
+    text-align: left;
+    letter-spacing: 0.02em;
+  }
+
+  .sec-btn:hover { border-color: var(--accent); color: var(--accent-dk); }
+  .sec-btn.on {
+    background: rgba(35,186,223,0.1);
+    border-color: var(--accent);
+    color: var(--accent-dk);
+  }
+
+  .sec-btn .cnt {
+    font-size: 0.6rem;
+    color: var(--muted);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .sec-btn.on .cnt { color: var(--accent); }
+
+  .mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .mode-card {
+    border: 1px solid var(--border);
+    background: var(--mid);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+
+  .mode-card:hover { border-color: var(--accent); }
+  .mode-card.on {
+    background: rgba(35,186,223,0.08);
+    border-color: var(--accent);
+  }
+
+  .mode-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .mode-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .qty-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .qty-lbl {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  .qty-ctrl { display: flex; align-items: center; gap: 0.8rem; }
+
+  .qty-btn {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--mid);
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .qty-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  #qty-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    min-width: 2.5rem;
+    text-align: center;
+  }
+
+  .start-btn {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    margin-top: 0.4rem;
+  }
+  .start-btn:hover { background: var(--accent-dk); }
+  .start-btn:active { transform: scale(0.99); }
+
+  /* ─── EXAM ─── */
+  #exam { min-height: 100vh; }
+
+  .exam-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .exam-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .prog-track {
+    flex: 1;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .prog-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+
+  .exam-ctr {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .exam-ctr b { color: var(--accent); }
+
+  .timer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .timer.warn { color: var(--warning); }
+  .timer.hot { color: var(--danger); }
+
+  .exam-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .q-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .q-num-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .q-sec-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2rem;
+    background: rgba(35,186,223,0.1);
+    color: var(--accent-dk);
+    border: 1px solid rgba(35,186,223,0.25);
+  }
+
+  .q-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.65;
+    color: var(--text);
+    margin-bottom: 1.8rem;
+  }
+
+  .opts { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.5rem; }
+
+  .opt {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    transition: all 0.12s;
+    line-height: 1.5;
+    color: var(--text);
+    text-align: left;
+    width: 100%;
+  }
+
+  .opt:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(35,186,223,0.04);
+  }
+
+  .opt-key {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--mid);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+    color: var(--muted);
+    transition: all 0.12s;
+  }
+
+  .opt:hover:not(:disabled) .opt-key {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(35,186,223,0.1);
+  }
+
+  .opt.picked { border-color: var(--accent); background: rgba(35,186,223,0.06); }
+  .opt.picked .opt-key { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .opt.correct { border-color: var(--success); background: rgba(144,168,120,0.1); }
+  .opt.correct .opt-key { background: var(--success); border-color: var(--success); color: #fff; }
+
+  .opt.wrong { border-color: var(--danger); background: rgba(242,130,129,0.1); }
+  .opt.wrong .opt-key { background: var(--danger); border-color: var(--danger); color: #fff; }
+
+  .opt:disabled { cursor: default; }
+
+  .feedback {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+  .feedback.ok { display:flex; background: rgba(144,168,120,0.12); border:1px solid rgba(144,168,120,0.4); color: #5a7a45; }
+  .feedback.bad { display:flex; background: rgba(242,130,129,0.12); border:1px solid rgba(242,130,129,0.4); color: #c0443e; }
+
+  .nav-row { display: flex; gap: 0.7rem; }
+
+  .nav-btn {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.4rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-btn.main { background: var(--accent); border-color: var(--accent); color: #fff; flex: 1; text-align: center; }
+  .nav-btn.main:hover { background: var(--accent-dk); border-color: var(--accent-dk); }
+
+  /* ─── RESULTS ─── */
+  #results { min-height: 100vh; }
+
+  .results-hero {
+    background: var(--dark);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .score-ring {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent) 0% var(--pct), rgba(255,255,255,0.1) var(--pct));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+    position: relative;
+  }
+  .score-ring::before {
+    content:''; position:absolute; inset:12px;
+    background: var(--dark); border-radius:50%;
+  }
+  .score-inner { position:relative; z-index:1; text-align:center; }
+  .score-pct-big {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem; font-weight: 800;
+    color: var(--accent); line-height: 1;
+  }
+  .score-lbl { font-size: 0.6rem; color: rgba(255,255,255,0.4); letter-spacing:0.1em; text-transform:uppercase; }
+
+  .pass-pill {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight: 800;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.35rem 1.1rem;
+    border-radius: 2rem;
+  }
+  .pass-pill.pass { background: rgba(144,168,120,0.2); border:1px solid var(--success); color: #90a878; }
+  .pass-pill.fail { background: rgba(242,130,129,0.2); border:1px solid var(--danger); color: #f28281; }
+
+  .results-body { max-width: 640px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  .r-stats {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .r-stat { background: var(--white); padding: 1rem; text-align: center; }
+  .r-stat-n { font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:800; line-height:1; }
+  .r-stat-n.g { color: var(--success); }
+  .r-stat-n.r { color: var(--danger); }
+  .r-stat-n.y { color: var(--warning); }
+  .r-stat-n.b { color: var(--accent); }
+  .r-stat-l { font-size:0.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.3rem; font-weight:600; }
+
+  .breakdown {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .bk-hd {
+    background: var(--mid);
+    padding: 0.6rem 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .bk-row {
+    display:flex; align-items:center; gap:1rem;
+    padding: 0.65rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .bk-row:last-child { border:none; }
+  .bk-name { font-size:0.78rem; flex:1; font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .bk-bar { width:80px; height:4px; background:var(--border); border-radius:2px; overflow:hidden; flex-shrink:0; }
+  .bk-fill { height:100%; border-radius:2px; transition: width 0.5s; }
+  .bk-score { font-family:'Montserrat',sans-serif; font-size:0.7rem; color:var(--muted); min-width:3rem; text-align:right; font-weight:600; }
+
+  .res-actions { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+  .res-btn {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    padding: 0.85rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .res-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .res-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .res-btn.primary:hover { background: var(--accent-dk); }
+
+  /* ─── REVIEW ─── */
+  #review { min-height: 100vh; }
+
+  .review-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0.7rem 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+    position: sticky; top:0; z-index:10;
+  }
+  .review-ttl { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); flex:1; }
+  .ftabs { display:flex; gap:0.4rem; }
+  .ftab {
+    background: var(--mid);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family:'Montserrat',sans-serif;
+    font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .ftab.on { border-color:var(--accent); color:var(--accent); background: rgba(35,186,223,0.08); }
+  .ftab.on-r { border-color:var(--danger); color:var(--danger); background: rgba(242,130,129,0.08); }
+  .back-sm {
+    background: none; border: 1px solid var(--border); color:var(--muted);
+    font-family:'Montserrat',sans-serif; font-size:0.6rem; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase;
+    padding:0.3rem 0.7rem; border-radius:2rem; cursor:pointer; transition:all 0.12s;
+  }
+  .back-sm:hover { border-color:var(--text); color:var(--text); }
+
+  .review-body { max-width:720px; margin:0 auto; padding:1.5rem; display:flex; flex-direction:column; gap:0.8rem; }
+
+  .rv-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .rv-card.rv-ok { border-color: rgba(144,168,120,0.5); }
+  .rv-card.rv-bad { border-color: rgba(242,130,129,0.5); }
+  .rv-hd { padding:0.6rem 1rem; display:flex; align-items:center; gap:0.7rem; border-bottom:1px solid var(--border); }
+  .rv-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .rv-ok .rv-dot { background:var(--success); }
+  .rv-bad .rv-dot { background:var(--danger); }
+  .rv-qn { font-family:'Montserrat',sans-serif; font-size:0.62rem; font-weight:700; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; }
+  .rv-qtext { padding:0.85rem 1rem; font-size:0.86rem; font-weight:600; line-height:1.55; }
+  .rv-opts { padding: 0 1rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; }
+  .rv-opt { padding:0.45rem 0.7rem; border-radius:4px; font-size:0.78rem; display:flex; align-items:flex-start; gap:0.5rem; color:var(--muted); line-height:1.4; }
+  .rv-opt.rv-correct { background:rgba(144,168,120,0.12); border:1px solid rgba(144,168,120,0.35); color:#5a7a45; }
+  .rv-opt.rv-wrong-pick { background:rgba(242,130,129,0.1); border:1px solid rgba(242,130,129,0.25); color:#c0443e; text-decoration:line-through; }
+  .rv-okey { font-family:'Montserrat',sans-serif; font-size:0.62rem; font-weight:800; min-width:1rem; }
+
+  @media (max-width:480px) {
+    .section-grid,.mode-grid { grid-template-columns:1fr; }
+    .r-stats { grid-template-columns:repeat(2,1fr); }
+    .res-actions { grid-template-columns:1fr; }
+    .ftabs { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <nav class="top-nav">
+    <a class="nav-brand" href="https://muchezz.github.io/">Mucheru Maina</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-title">KCNA Exam Prep</span>
+  </nav>
+  <div class="hero">
+    <div class="hero-eyebrow">Kubernetes &amp; Cloud Native Associate</div>
+    <h1>KCNA Exam Prep</h1>
+    <p class="hero-sub">317 questions across 7 sections &mdash; no API calls, no limits</p>
+  </div>
+  <div class="home-content">
+    <div class="stats-row">
+      <div class="stat-cell"><div class="stat-num">317</div><div class="stat-lbl">Questions</div></div>
+      <div class="stat-cell"><div class="stat-num">7</div><div class="stat-lbl">Sections</div></div>
+      <div class="stat-cell"><div class="stat-num">75%</div><div class="stat-lbl">Pass Mark</div></div>
+    </div>
+
+    <div class="config-block">
+      <div class="config-header">Sections</div>
+      <div class="config-body">
+        <div class="section-grid" id="sec-grid"></div>
+      </div>
+    </div>
+
+    <div class="config-block">
+      <div class="config-header">Mode</div>
+      <div class="config-body">
+        <div class="mode-grid">
+          <div class="mode-card on" data-mode="practice" onclick="selMode('practice')">
+            <div class="mode-name">Practice</div>
+            <div class="mode-desc">Instant feedback per question</div>
+          </div>
+          <div class="mode-card" data-mode="exam" onclick="selMode('exam')">
+            <div class="mode-name">Exam</div>
+            <div class="mode-desc">Score revealed at the end</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="config-block">
+      <div class="config-header">Questions</div>
+      <div class="config-body">
+        <div class="qty-row">
+          <div class="qty-lbl">How many questions?</div>
+          <div class="qty-ctrl">
+            <button class="qty-btn" onclick="chQty(-5)">−</button>
+            <div id="qty-num">20</div>
+            <button class="qty-btn" onclick="chQty(5)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="start-btn" onclick="startExam()">Start Exam</button>
+  </div>
+</div>
+
+<!-- EXAM -->
+<div id="exam" class="screen">
+  <div class="exam-bar">
+    <span class="exam-brand">KCNA</span>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+    <div class="exam-ctr"><b id="q-cur">1</b> / <span id="q-tot">20</span></div>
+    <div class="timer" id="timer"></div>
+  </div>
+  <div class="exam-body">
+    <div class="q-head">
+      <span class="q-num-tag" id="q-num-tag">Q1</span>
+      <span class="q-sec-tag" id="q-sec-tag"></span>
+    </div>
+    <div class="q-text" id="q-text"></div>
+    <div class="opts" id="opts"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="nav-row">
+      <button class="nav-btn" id="prev-btn" onclick="nav(-1)">← Prev</button>
+      <button class="nav-btn main" id="next-btn" onclick="nav(1)">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="results" class="screen">
+  <nav class="top-nav">
+    <a class="nav-brand" href="https://muchezz.github.io/">Mucheru Maina</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-title">Results</span>
+  </nav>
+  <div class="results-hero">
+    <div class="score-ring" id="score-ring">
+      <div class="score-inner">
+        <div class="score-pct-big" id="score-pct">0%</div>
+        <div class="score-lbl">Score</div>
+      </div>
+    </div>
+    <div class="pass-pill" id="pass-pill">PASS</div>
+  </div>
+  <div class="results-body">
+    <div class="r-stats">
+      <div class="r-stat"><div class="r-stat-n g" id="r-c">0</div><div class="r-stat-l">Correct</div></div>
+      <div class="r-stat"><div class="r-stat-n r" id="r-w">0</div><div class="r-stat-l">Wrong</div></div>
+      <div class="r-stat"><div class="r-stat-n y" id="r-s">0</div><div class="r-stat-l">Skipped</div></div>
+      <div class="r-stat"><div class="r-stat-n b" id="r-t">0</div><div class="r-stat-l">Total</div></div>
+    </div>
+    <div class="breakdown">
+      <div class="bk-hd">Section Breakdown</div>
+      <div id="bk-rows"></div>
+    </div>
+    <div class="res-actions">
+      <button class="res-btn" onclick="goReview('all')">Review All</button>
+      <button class="res-btn" onclick="goReview('wrong')">Review Wrong</button>
+      <button class="res-btn" onclick="retryWrong()">Retry Wrong</button>
+      <button class="res-btn primary" onclick="goHome()">New Exam</button>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW -->
+<div id="review" class="screen">
+  <div class="review-bar">
+    <div class="review-ttl" id="rv-ttl">Review</div>
+    <div class="ftabs">
+      <button class="ftab on" data-f="all" onclick="setFilter('all')">All</button>
+      <button class="ftab" data-f="wrong" onclick="setFilter('wrong')">Wrong</button>
+      <button class="ftab" data-f="correct" onclick="setFilter('correct')">Correct</button>
+    </div>
+    <button class="back-sm" onclick="goResults()">← Back</button>
+  </div>
+  <div class="review-body" id="rv-body"></div>
+</div>
+
+<script>
+const QS = [{"id":1,"section":"All Sections 1","num":1,"text":"What is the fundamental reason Kubernetes uses Pods as the smallest deployable unit, rather than individual containers directly?","options":{"A":"To simplify network configuration for containers","B":"To enable co-location and shared resources for containers","C":"To enforce stricter security boundaries than containers","D":"To provide a unique IP address per container","E":"To reduce container image size"},"answer":"B"},{"id":2,"section":"All Sections 1","num":3,"text":"A developer needs to expose a web application running in a set of Pods within the cluster using a stable internal IP address. Which Kubernetes resource is most appropriate?","options":{"A":"Ingress","B":"NodePort Service","C":"ClusterIP Service","D":"ExternalName Service","E":"ReplicaSet"},"answer":"C"},{"id":3,"section":"All Sections 1","num":4,"text":"What is the primary purpose of the Kubernetes API server in the control plane architecture?","options":{"A":"To run containerized applications directly","B":"To schedule Pods onto available worker nodes","C":"To validate and process REST requests for API objects 2","D":"To manage network tra\ufb00ic between Pods","E":"To store cluster state in a time-series database"},"answer":"C"},{"id":4,"section":"All Sections 1","num":5,"text":"When a Pod is scheduled, what is the primary factor the kubescheduler considers from the Pod\u2019s specification?","options":{"A":"Container image version","B":"restartPolicy","C":"Resource requests and limits","D":"serviceAccountName","E":"labels"},"answer":"C"},{"id":5,"section":"All Sections 1","num":7,"text":"What core benefit does containerization (e.g., using Docker or containerd) provide for application deployment?","options":{"A":"Automatic scaling of applications","B":"Abstraction of the underlying operating system and kernel","C":"Consistent runtime environment across different machines","D":"Built-in service discovery and load balancing","E":"Secure by default inter-container communication"},"answer":"C"},{"id":6,"section":"All Sections 1","num":8,"text":"What is the main advantage of using a declarative approach (e.g., YAML manifests) to manage Kubernetes resources?","options":{"A":"It allows for more complex scripting logic","B":"It enables direct manipulation of etcd data","C":"It focuses on what desired state, not how to achieve it","D":"It provides faster API response times","E":"It simplifies single-container Pod deployments only 3"},"answer":"C"},{"id":7,"section":"All Sections 1","num":9,"text":"Why is container orchestration essential for managing microservices at scale?","options":{"A":"It simplifies writing microservice code","B":"It automatically converts monolithic apps to microservices","C":"It handles service discovery, scaling, and fault tolerance","D":"It provides a centralized logging solution by default","E":"It guarantees zero-downtime deployments"},"answer":"C"},{"id":8,"section":"All Sections 1","num":11,"text":"In Kubernetes, what is the primary role of Role-Based Access Control (RBAC)?","options":{"A":"To define network tra\ufb00ic flow between Pods","B":"To manage secure storage of sensitive data like passwords","C":"To control user and service account access to API resources","D":"To assign static IP addresses to Services","E":"To encrypt container images at rest"},"answer":"C"},{"id":9,"section":"All Sections 1","num":12,"text":"What is the function of a NetworkPolicy in Kubernetes?","options":{"A":"To provide a stable DNS name for a set of Pods","B":"To manage external access to services via HTTP/S routing","C":"To define how Pods are allowed to communicate with each other","D":"To assign IP addresses to newly created Pods","E":"To encrypt tra\ufb00ic between services in a mesh"},"answer":"C"},{"id":10,"section":"All Sections 1","num":15,"text":"Which security mechanism in Kubernetes is best suited for providing an identity to processes running in Pods to interact with the API server?","options":{"A":"NetworkPolicy","B":"SecurityContext","C":"ServiceAccount","D":"PodSecurityPolicy (deprecated) / PodSecurityAdmission","E":"TLS Certificates for etcd"},"answer":"C"},{"id":11,"section":"All Sections 1","num":16,"text":"What is the primary goal of Horizontal Pod Autoscaling (HPA) in Kubernetes?","options":{"A":"To increase the resource limits of existing Pods","B":"To adjust the number of Pod replicas based on metrics","C":"To add or remove Nodes from the cluster","D":"To automatically update container images","E":"To manage storage capacity for stateful sets"},"answer":"B"},{"id":12,"section":"All Sections 1","num":19,"text":"In a typical cloud native environment, which persona is most concerned with ensuring application uptime, performance, and managing incident response?","options":{"A":"Application Developer","B":"Platform Consumer","C":"Site Reliability Engineer (SRE) / Platform Operator","D":"Business Analyst","E":"End User"},"answer":"C"},{"id":13,"section":"All Sections 1","num":20,"text":"Why are Open Standards, like those defined by the Open Container Initiative (OCI), critical for the cloud native ecosystem?","options":{"A":"They guarantee better application performance","B":"They enforce specific vendor implementations","C":"They promote interoperability and prevent vendor lock-in","D":"They reduce the need for security patching","E":"They simplify the user interface of cloud platforms"},"answer":"C"},{"id":14,"section":"All Sections 1","num":22,"text":"Prometheus is primarily designed for which type of observability data?","options":{"A":"Distributed tracing","B":"Log aggregation and analysis","C":"Time-series metrics collection and alerting","D":"Security auditing and compliance reporting","E":"Real-time user monitoring (RUM)"},"answer":"C"},{"id":15,"section":"All Sections 1","num":23,"text":"In Prometheus, what is an \u201dexporter\u201d?","options":{"A":"A component that sends alerts to notification channels","B":"A database that stores long-term metric data","C":"A client library for instrumenting application code","D":"A piece of software that exposes metrics from third-party systems","E":"A dashboard for visualizing metrics"},"answer":"D"},{"id":16,"section":"All Sections 1","num":24,"text":"What is a key challenge in cost management specifically related to shared Kubernetes clusters?","options":{"A":"High cost of Kubernetes control plane components","B":"Di\ufb00iculty in attributing resource usage to specific teams/apps","C":"Inability to use reserved instances with Kubernetes","D":"Lack of tools for visualizing overall cloud spend","E":"Fixed pricing models for all Kubernetes services"},"answer":"B"},{"id":17,"section":"All Sections 1","num":26,"text":"In a CI/CD pipeline for a cloud native application, what is the typical output of the \u201dContinuous Integration\u201d (CI) phase?","options":{"A":"A running application in production","B":"A new Kubernetes cluster provisioned","C":"A tested and versioned container image/artifact","D":"A detailed cost analysis report","E":"A set of user stories for the next sprint"},"answer":"C"},{"id":18,"section":"All Sections 1","num":27,"text":"What is the primary benefit of implementing CI/CD pipelines for application delivery?","options":{"A":"It eliminates the need for testing","B":"It reduces infrastructure costs significantly","C":"It enables faster, more reliable software releases","D":"It automatically writes application code","E":"It replaces the need for version control systems"},"answer":"C"},{"id":19,"section":"All Sections 1","num":28,"text":"What does a ReplicaSet ensure in Kubernetes?","options":{"A":"That a Pod runs on every node","B":"That a certain number of Pod replicas are running","C":"That Pods have stable network identifiers","D":"That external tra\ufb00ic can reach the Pods","E":"That Pods are scheduled according to a\ufb00inity rules"},"answer":"B"},{"id":20,"section":"All Sections 1","num":29,"text":"Which of the following is NOT a core characteristic of cloud native architectures? 8","options":{"A":"Microservices","B":"Containers","C":"Monolithic application design","D":"DevOps practices","E":"Automation"},"answer":"C"},{"id":21,"section":"All Sections 1","num":30,"text":"What is the main purpose of a ServiceAccount in Kubernetes when interacting with the API server?","options":{"A":"To define network access policies for Pods","B":"To provide an identity for Pods to authenticate to the API","C":"To store sensitive credentials for applications","D":"To group users for applying permissions","E":"To manage DNS records for services"},"answer":"B"},{"id":22,"section":"All Sections 1","num":31,"text":"If you need to run a batch job that completes and then terminates, which Kubernetes workload resource is most suitable?","options":{"A":"Deployment","B":"StatefulSet","C":"DaemonSet","D":"Job","E":"Service"},"answer":"D"},{"id":23,"section":"All Sections 1","num":32,"text":"Which of the following best describes the concept of \u201ddesired state\u201d in Kubernetes?","options":{"A":"The current operational status of cluster nodes","B":"The configuration specified by the user for their resources","C":"The real-time metrics collected by Prometheus","D":"The log output generated by running containers","E":"The network policies applied to Pods"},"answer":"B"},{"id":24,"section":"All Sections 1","num":33,"text":"Which OCI specification defines the format of a container image?","options":{"A":"Runtime Specification","B":"Image Specification 9","C":"Distribution Specification","D":"Network Specification","E":"Storage Specification"},"answer":"B"},{"id":25,"section":"All Sections 1","num":34,"text":"What is a key difference between kubectl apply -f <filename> and kubectl create -f <filename>?","options":{"A":"apply is declarative, create is imperative","B":"create can update existing resources, apply cannot","C":"apply ignores existing resources, create fails if they exist","D":"apply stores last-applied-configuration, create does not","E":"create is idempotent, apply is not"},"answer":"D"},{"id":26,"section":"All Sections 1","num":35,"text":"In the context of container security, what does \u201dleast privilege\u201d primarily refer to?","options":{"A":"Running containers with minimal resource requests","B":"Granting containers only the permissions they absolutely need","C":"Using the smallest possible base container images","D":"Limiting network access to containers","E":"Encrypting all data within the container"},"answer":"B"},{"id":27,"section":"All Sections 1","num":36,"text":"What is the primary function of kube-proxy when a Service of type ClusterIP is created?","options":{"A":"It assigns an IP address from the cluster\u2019s Pod CIDR.","B":"It modifies iptables or IPVS rules on nodes to route tra\ufb00ic.","C":"It creates a DNS A record for the Service.","D":"It terminates TLS connections for the Service.","E":"It exposes the Service on a port on each Node."},"answer":"B"},{"id":28,"section":"All Sections 1","num":37,"text":"What core benefit does a StatefulSet provide over a Deployment for applications like databases?","options":{"A":"Automatic rolling updates by default","B":"Simpler YAML configuration for Pod templates","C":"Stable, unique network identifiers and persistent storage 10","D":"Support for hostNetwork: true","E":"Higher number of allowed replicas"},"answer":"C"},{"id":29,"section":"All Sections 1","num":38,"text":"What is the primary role of the \u201dController Manager\u201d in Kubernetes?","options":{"A":"Manages user authentication and authorization","B":"Exposes the Kubernetes API to external clients","C":"Runs various controllers that regulate cluster state","D":"Schedules Pods onto appropriate Nodes","E":"Stores all cluster configuration data"},"answer":"C"},{"id":30,"section":"All Sections 1","num":39,"text":"What is a primary characteristic of Vertical Pod Autoscaling (VPA)?","options":{"A":"It adjusts the number of Pod replicas.","B":"It adjusts the CPU and memory requests and limits for Pods.","C":"It adds or removes Nodes from the cluster.","D":"It automatically selects the optimal storage class.","E":"It scales the number of available IP addresses."},"answer":"B"},{"id":31,"section":"All Sections 1","num":40,"text":"Which statement accurately describes a key aspect of \u201dobservability\u201d in cloud native systems?","options":{"A":"It is solely focused on collecting system logs.","B":"It primarily relies on manual health checks by operators.","C":"It enables understanding a system\u2019s internal state from its outputs.","D":"It is achieved by using proprietary monitoring tools.","E":"It is only relevant for production environments."},"answer":"C"},{"id":32,"section":"All Sections 1","num":41,"text":"In Prometheus, what does the up metric typically indicate for a scraped target?","options":{"A":"The version number of the target application.","B":"The number of active user connections to the target.","C":"Whether Prometheus was able to successfully scrape the target.","D":"The CPU utilization of the target. 11","E":"The total uptime of the target since it started."},"answer":"C"},{"id":33,"section":"All Sections 1","num":42,"text":"From a FinOps perspective in a Kubernetes environment, why is tagging resources (e.g., with labels) important?","options":{"A":"It improves the scheduling e\ufb00iciency of Pods.","B":"It enables more accurate cost allocation and showback/chargeback.","C":"It automatically secures inter-Pod communication.","D":"It increases the performance of PersistentVolumes.","E":"It simplifies the process of upgrading Kubernetes."},"answer":"B"},{"id":34,"section":"All Sections 1","num":43,"text":"What is a key advantage of using GitOps for managing Kubernetes deployments compared to traditional CI/CD push-based deployments?","options":{"A":"GitOps pipelines are significantly faster to execute.","B":"GitOps eliminates the need for container registries.","C":"GitOps enhances security by reducing direct cluster access for CI.","D":"GitOps does not require YAML manifests for resources.","E":"GitOps is only suitable for small-scale deployments."},"answer":"C"},{"id":35,"section":"All Sections 1","num":44,"text":"Which of these is a core component of a \u201dContinuous Delivery\u201d pipeline but NOT necessarily \u201dContinuous Deployment\u201d?","options":{"A":"Automated building of code into an artifact.","B":"Automated execution of unit and integration tests.","C":"Automated deployment to a staging/QA environment.","D":"Automated deployment to the production environment.","E":"Manual approval gate before production deployment."},"answer":"E"},{"id":36,"section":"All Sections 1","num":46,"text":"Which of these is a primary goal of the CNCF\u2019s \u201dTrail Map\u201d for cloud native adoption?","options":{"A":"To mandate specific vendor products for each stage.","B":"To provide a prescriptive path for building cloud native apps.","C":"To offer a recommended journey and project choices for adopters.","D":"To rank cloud providers based on their Kubernetes offerings.","E":"To certify individual developers as cloud native experts."},"answer":"C"},{"id":37,"section":"All Sections 1","num":47,"text":"What is the primary motivation behind using \u201dServerless Functions\u201d (FaaS)?","options":{"A":"To achieve higher compute density on physical servers.","B":"To run long-lived, stateful batch processing jobs.","C":"To execute event-driven code without managing infrastructure.","D":"To gain fine-grained control over OS-level configurations.","E":"To build complex, monolithic application backends."},"answer":"C"},{"id":38,"section":"All Sections 1","num":48,"text":"What is the role of an \u201dIngress Controller\u201d in a Kubernetes cluster?","options":{"A":"It assigns IP addresses to Pods.","B":"It manages storage volumes for stateful applications.","C":"It implements the rules defined in Ingress resources.","D":"It monitors the health of Nodes in the cluster.","E":"It encrypts communication between control plane components."},"answer":"C"},{"id":39,"section":"All Sections 1","num":50,"text":"What is the core difference between \u201dauthentication\u201d and \u201dauthorization\u201d in Kubernetes security?","options":{"A":"Authentication is for users, authorization for service accounts.","B":"Authentication verifies identity, authorization verifies permissions.","C":"Authorization happens before authentication in the API request flow.","D":"Authentication uses Roles, authorization uses RoleBindings.","E":"Authorization uses client certificates, authentication uses tokens."},"answer":"B"},{"id":40,"section":"All Sections 1","num":51,"text":"What is the smallest and simplest deployable unit object created and managed by Kubernetes?","options":{"A":"Node","B":"Container","C":"Pod","D":"Deployment","E":"nan"},"answer":"C"},{"id":41,"section":"All Sections 1","num":52,"text":"Which Kubernetes component is responsible for watching for newly created Pods and assigning them to Nodes?","options":{"A":"kube-apiserver","B":"etcd","C":"kube-scheduler","D":"kubelet","E":"nan"},"answer":"C"},{"id":42,"section":"All Sections 1","num":55,"text":"What is the primary role of etcd in a Kubernetes cluster?","options":{"A":"Running application containers","B":"Scheduling workloads","C":"Storing the cluster state","D":"Managing network policies","E":"nan"},"answer":"C"},{"id":43,"section":"All Sections 1","num":56,"text":"Which Kubernetes resource is typically used to manage stateless applications by ensuring a specified number of Pod replicas are running?","options":{"A":"StatefulSet","B":"DaemonSet","C":"Deployment","D":"Job","E":"nan"},"answer":"C"},{"id":44,"section":"All Sections 1","num":57,"text":"What type of software package bundles application code with all its dependencies, libraries, and configuration files?","options":{"A":"Virtual Machine","B":"Container","C":"Operating System","D":"Serverless Function","E":"nan"},"answer":"B"},{"id":45,"section":"All Sections 1","num":59,"text":"What is the main benefit of using container orchestration systems like Kubernetes?","options":{"A":"Simplifying code writing","B":"Automating deployment scaling","C":"Reducing storage costs","D":"Improving network latency","E":"nan"},"answer":"B"},{"id":46,"section":"All Sections 1","num":60,"text":"Which of these is a standard specified by the OCI (Open Container Initiative)?","options":{"A":"Docker","B":"Kubernetes","C":"Image Specification","D":"Istio","E":"nan"},"answer":"C"},{"id":47,"section":"All Sections 1","num":61,"text":"Which container runtime is most commonly associated with Kubernetes and implements the CRI (Container Runtime Interface)?","options":{"A":"Docker (dockershim)","B":"containerd","C":"rkt","D":"LXC","E":"nan"},"answer":"B"},{"id":48,"section":"All Sections 1","num":63,"text":"How can you securely store sensitive information like passwords or API keys in Kubernetes?","options":{"A":"ConfigMap","B":"Annotation","C":"Label","D":"Secret","E":"nan"},"answer":"D"},{"id":49,"section":"All Sections 1","num":64,"text":"What is the role of a CNI (Container Network Interface) plugin in Kubernetes?","options":{"A":"Managing storage volumes","B":"Providing container networking","C":"Scheduling Pods","D":"Securing the API server","E":"nan"},"answer":"B"},{"id":50,"section":"All Sections 1","num":65,"text":"Which Kubernetes object defines rules about how Pods are allowed to communicate with each other and network endpoints?","options":{"A":"Service","B":"Ingress","C":"NetworkPolicy","D":"SecurityContext","E":"nan"},"answer":"C"},{"id":51,"section":"All Sections 1","num":67,"text":"What Kubernetes object represents a piece of storage in the cluster, provisioned by an administrator or dynamically?","options":{"A":"PersistentVolumeClaim (PVC)","B":"StorageClass","C":"PersistentVolume (PV)","D":"Volume","E":"nan"},"answer":"C"},{"id":52,"section":"All Sections 1","num":68,"text":"What does a PersistentVolumeClaim (PVC) represent in Kubernetes?","options":{"A":"A request for storage by a user","B":"A type of storage backend","C":"A node\u2019s local storage","D":"A backup of a volume","E":"nan"},"answer":"A"},{"id":53,"section":"All Sections 1","num":69,"text":"What is the function of a StorageClass in Kubernetes?","options":{"A":"To define types of storage","B":"To claim a specific PV","C":"To attach storage to a Pod","D":"To backup volume data","E":"nan"},"answer":"A"},{"id":54,"section":"All Sections 1","num":70,"text":"Which mechanism allows Kubernetes to automatically adjust the number of Pods in a Deployment based on CPU utilization or custom metrics? 18","options":{"A":"Vertical Pod Autoscaler (VPA)","B":"Cluster Autoscaler (CA)","C":"Horizontal Pod Autoscaler (HPA)","D":"Node Problem Detector (NPD)","E":"nan"},"answer":"C"},{"id":55,"section":"All Sections 1","num":71,"text":"What is the primary goal of the Cluster Autoscaler?","options":{"A":"Scale Pod replicas","B":"Scale cluster Nodes","C":"Scale Persistent Volumes","D":"Scale Service endpoints","E":"nan"},"answer":"B"},{"id":56,"section":"All Sections 1","num":72,"text":"What term describes an architectural approach where applications are built as small, independent services that run in their own processes?","options":{"A":"Monolithic","B":"Microservices","C":"Serverless","D":"N-Tier","E":"nan"},"answer":"B"},{"id":57,"section":"All Sections 1","num":73,"text":"What does \u201dServerless\u201d computing primarily abstract away from the developer?","options":{"A":"Networking","B":"Storage","C":"Server Management","D":"Operating System choice","E":"nan"},"answer":"C"},{"id":58,"section":"All Sections 1","num":74,"text":"Which organization hosts Kubernetes and promotes the growth of the cloud native ecosystem?","options":{"A":"Linux Foundation (LF) 19","B":"Apache Software Foundation (ASF)","C":"Cloud Native Computing Foundation (CNCF)","D":"Open Source Initiative (OSI)","E":"nan"},"answer":"C"},{"id":59,"section":"All Sections 1","num":75,"text":"What is the benefit of using open standards in cloud native technologies?","options":{"A":"Vendor lock-in","B":"Increased complexity","C":"Interoperability Portability","D":"Reduced security","E":"nan"},"answer":"C"},{"id":60,"section":"All Sections 1","num":76,"text":"In a typical cloud native environment, which persona is primarily responsible for designing and building the application?","options":{"A":"Operator","B":"Developer","C":"Site Reliability Engineer (SRE)","D":"Security Engineer","E":"nan"},"answer":"B"},{"id":61,"section":"All Sections 1","num":77,"text":"Which persona is typically focused on the reliability, scalability, and maintenance of the underlying Kubernetes platform?","options":{"A":"End User","B":"Application Developer","C":"Platform Operator / SRE","D":"Data Scientist","E":"nan"},"answer":"C"},{"id":62,"section":"All Sections 1","num":78,"text":"What are the three pillars of observability in cloud native systems?","options":{"A":"Alerts, Dashboards, Reports","B":"Logs, Metrics, Traces 20","C":"Monitoring, Logging, Profiling","D":"Scaling, Scheduling, Storing","E":"nan"},"answer":"B"},{"id":63,"section":"All Sections 1","num":80,"text":"What type of telemetry data represents a measurement sampled over time, often aggregated?","options":{"A":"Metrics","B":"Traces","C":"Logs","D":"Events","E":"nan"},"answer":"A"},{"id":64,"section":"All Sections 1","num":81,"text":"What type of telemetry data shows the path and duration of a request as it flows through multiple services?","options":{"A":"Metrics","B":"Traces","C":"Logs","D":"Alerts","E":"nan"},"answer":"B"},{"id":65,"section":"All Sections 1","num":82,"text":"Which open-source monitoring system, graduated by the CNCF, is widely used for collecting and querying time-series metrics in Kubernetes?","options":{"A":"Grafana","B":"Jaeger 21","C":"Prometheus","D":"Fluentd","E":"nan"},"answer":"C"},{"id":66,"section":"All Sections 1","num":83,"text":"How does Prometheus typically gather metrics from applications and infrastructure?","options":{"A":"Pushing metrics to endpoints","B":"Pulling metrics via scraping","C":"Reading log files directly","D":"Using kernel probes","E":"nan"},"answer":"B"},{"id":67,"section":"All Sections 1","num":84,"text":"What language is used to write queries in Prometheus?","options":{"A":"SQL","B":"PromQL","C":"JSONPath","D":"YAML","E":"nan"},"answer":"B"},{"id":68,"section":"All Sections 1","num":85,"text":"In cloud native cost management, what does \u201dFinOps\u201d primarily focus on?","options":{"A":"Optimizing application code","B":"Managing cloud spending","C":"Improving network security","D":"Automating deployments","E":"nan"},"answer":"B"},{"id":69,"section":"All Sections 1","num":86,"text":"Why can cost management be challenging in Kubernetes environments?","options":{"A":"Lack of monitoring tools","B":"Shared resources dynamic workloads","C":"Fixed infrastructure costs","D":"Infrequent deployments 22","E":"nan"},"answer":"B"},{"id":70,"section":"All Sections 1","num":87,"text":"What is the practice of using Git repositories as the single source of truth for defining and managing infrastructure and applications?","options":{"A":"CI/CD","B":"DevOps","C":"GitOps","D":"Infrastructure as Code (IaC)","E":"nan"},"answer":"C"},{"id":71,"section":"All Sections 1","num":89,"text":"What does \u201dCI\u201d stand for in the context of application delivery?","options":{"A":"Continuous Integration","B":"Cluster Infrastructure","C":"Container Interface","D":"Cloud Instance","E":"nan"},"answer":"A"},{"id":72,"section":"All Sections 1","num":90,"text":"What does \u201dCD\u201d stand for in CI/CD?","options":{"A":"Container Deployment","B":"Continuous Delivery/Deployment","C":"Cluster Discovery","D":"Centralized Dashboard","E":"nan 23"},"answer":"B"},{"id":73,"section":"All Sections 1","num":91,"text":"Which stage in a typical CI/CD pipeline for Kubernetes usually involves creating a container image?","options":{"A":"Testing","B":"Building","C":"Deployment","D":"Monitoring","E":"nan"},"answer":"B"},{"id":74,"section":"All Sections 1","num":92,"text":"Which tool is commonly used in CI/CD pipelines to automate the build, test, and deployment processes?","options":{"A":"Kubernetes","B":"Docker","C":"Jenkins / GitLab CI / GitHub Actions","D":"Prometheus","E":"nan"},"answer":"C"},{"id":75,"section":"All Sections 1","num":93,"text":"What is the primary goal of Application Delivery in a cloud native context?","options":{"A":"To secure the cluster","B":"To monitor resource usage","C":"To reliably deploy manage apps","D":"To provision infrastructure","E":"nan"},"answer":"C"},{"id":76,"section":"All Sections 1","num":94,"text":"In Kubernetes RBAC (Role-Based Access Control), what defines a set of permissions?","options":{"A":"Role / ClusterRole","B":"ServiceAccount","C":"RoleBinding / ClusterRoleBinding","D":"User","E":"nan"},"answer":"A"},{"id":77,"section":"All Sections 1","num":96,"text":"If you need a Pod to run on every single Node in the cluster (or a subset), which controller is most suitable?","options":{"A":"Deployment","B":"StatefulSet","C":"DaemonSet","D":"Job","E":"nan"},"answer":"C"},{"id":78,"section":"All Sections 1","num":98,"text":"Which Kubernetes API object is used to manage external access to services in a cluster, typically HTTP/S?","options":{"A":"Service (LoadBalancer type)","B":"NodePort Service","C":"Ingress","D":"ExternalName Service","E":"nan"},"answer":"C"},{"id":79,"section":"All Sections 1","num":100,"text":"What fundamental concept allows Kubernetes to maintain the desired state declared by the user?","options":{"A":"Imperative Commands","B":"Control Loop / Reconciliation","C":"Manual Scaling","D":"Direct Node Access","E":"nan"},"answer":"B"},{"id":80,"section":"All Sections 2","num":1,"text":"What is the smallest and simplest deployable unit object created and managed by Kubernetes?","options":{"A":"Node","B":"Container","C":"Pod","D":"Deployment E."},"answer":"C"},{"id":81,"section":"All Sections 2","num":2,"text":"Which Kubernetes component is responsible for watching for newly created Pods and assigning them to Nodes?","options":{"A":"kube-apiserver","B":"etcd","C":"kube-scheduler","D":"kubelet E. 26"},"answer":"C"},{"id":82,"section":"All Sections 2","num":3,"text":"What is the primary function of the kubelet component?","options":{"A":"Storing cluster state","B":"Scheduling Pods onto Nodes","C":"Managing the container runtime","D":"Exposing the Kubernetes API E."},"answer":"C"},{"id":83,"section":"All Sections 2","num":4,"text":"Which component acts as the central control plane and exposes the Kubernetes API?","options":{"A":"kube-proxy","B":"kube-apiserver","C":"etcd","D":"controller-manager E."},"answer":"B"},{"id":84,"section":"All Sections 2","num":6,"text":"Which Kubernetes resource is typically used to manage stateless applications by ensuring a specified number of Pod replicas are running?","options":{"A":"StatefulSet","B":"DaemonSet","C":"Deployment","D":"Job E."},"answer":"C"},{"id":85,"section":"All Sections 2","num":8,"text":"In Kubernetes, what is the process of assigning Pods to Nodes called?","options":{"A":"Replication","B":"Orchestration","C":"Scheduling","D":"Deployment E."},"answer":"C"},{"id":86,"section":"All Sections 2","num":9,"text":"What is the main benefit of using container orchestration systems like Kubernetes?","options":{"A":"Simplifying code writing","B":"Automating deployment scaling","C":"Reducing storage costs","D":"Improving network latency E."},"answer":"B"},{"id":87,"section":"All Sections 2","num":10,"text":"Which of these is a standard specified by the OCI (Open Container Initiative)?","options":{"A":"Docker","B":"Kubernetes","C":"Image Specification","D":"Istio E."},"answer":"C"},{"id":88,"section":"All Sections 2","num":12,"text":"What Kubernetes object provides a stable IP address and DNS name for accessing a set of Pods?","options":{"A":"Ingress","B":"Service","C":"EndpointSlice","D":"NetworkPolicy E."},"answer":"B"},{"id":89,"section":"All Sections 2","num":13,"text":"How can you securely store sensitive information like passwords or API keys in Kubernetes?","options":{"A":"ConfigMap","B":"Annotation","C":"Label","D":"Secret E."},"answer":"D"},{"id":90,"section":"All Sections 2","num":16,"text":"What is the primary purpose of a Service Mesh like Istio or Linkerd?","options":{"A":"Container image building","B":"Cluster storage management","C":"Managing inter-service comms","D":"Node provisioning E."},"answer":"C"},{"id":91,"section":"All Sections 2","num":17,"text":"What Kubernetes object represents a piece of storage in the cluster, provisioned by an administrator or dynamically?","options":{"A":"PersistentVolumeClaim (PVC)","B":"StorageClass","C":"PersistentVolume (PV)","D":"Volume E."},"answer":"C"},{"id":92,"section":"All Sections 2","num":18,"text":"What does a PersistentVolumeClaim (PVC) represent in Kubernetes?","options":{"A":"A request for storage by a user","B":"A type of storage backend","C":"A node\u2019s local storage","D":"A backup of a volume E."},"answer":"A"},{"id":93,"section":"All Sections 2","num":19,"text":"What is the function of a StorageClass in Kubernetes? 30","options":{"A":"To define types of storage","B":"To claim a specific PV","C":"To attach storage to a Pod","D":"To backup volume data E."},"answer":"A"},{"id":94,"section":"All Sections 2","num":20,"text":"Which mechanism allows Kubernetes to automatically adjust the number of Pods in a Deployment based on CPU utilization or custom metrics?","options":{"A":"Vertical Pod Autoscaler (VPA)","B":"Cluster Autoscaler (CA)","C":"Horizontal Pod Autoscaler (HPA)","D":"Node Problem Detector (NPD) E."},"answer":"C"},{"id":95,"section":"All Sections 2","num":21,"text":"What is the primary goal of the Cluster Autoscaler?","options":{"A":"Scale Pod replicas","B":"Scale cluster Nodes","C":"Scale Persistent Volumes","D":"Scale Service endpoints E."},"answer":"B"},{"id":96,"section":"All Sections 2","num":22,"text":"What term describes an architectural approach where applications are built as small, independent services that run in their own processes?","options":{"A":"Monolithic","B":"Microservices","C":"Serverless","D":"N-Tier E."},"answer":"B"},{"id":97,"section":"All Sections 2","num":23,"text":"What does \u201dServerless\u201d computing primarily abstract away from the developer? 31","options":{"A":"Networking","B":"Storage","C":"Server Management","D":"Operating System choice E."},"answer":"C"},{"id":98,"section":"All Sections 2","num":24,"text":"Which organization hosts Kubernetes and promotes the growth of the cloud native ecosystem?","options":{"A":"Linux Foundation (LF)","B":"Apache Software Foundation (ASF)","C":"Cloud Native Computing Foundation (CNCF)","D":"Open Source Initiative (OSI) E."},"answer":"C"},{"id":99,"section":"All Sections 2","num":25,"text":"What is the benefit of using open standards in cloud native technologies?","options":{"A":"Vendor lock-in","B":"Increased complexity","C":"Interoperability Portability","D":"Reduced security E."},"answer":"C"},{"id":100,"section":"All Sections 2","num":26,"text":"In a typical cloud native environment, which persona is primarily responsible for designing and building the application?","options":{"A":"Operator","B":"Developer","C":"Site Reliability Engineer (SRE)","D":"Security Engineer E."},"answer":"B"},{"id":101,"section":"All Sections 2","num":28,"text":"What are the three pillars of observability in cloud native systems?","options":{"A":"Alerts, Dashboards, Reports","B":"Logs, Metrics, Traces","C":"Monitoring, Logging, Profiling","D":"Scaling, Scheduling, Storing E."},"answer":"B"},{"id":102,"section":"All Sections 2","num":29,"text":"What type of telemetry data records discrete events that happened at a specific time?","options":{"A":"Metrics","B":"Traces","C":"Logs","D":"Profiles E."},"answer":"C"},{"id":103,"section":"All Sections 2","num":30,"text":"What type of telemetry data represents a measurement sampled over time, often aggregated?","options":{"A":"Metrics","B":"Traces","C":"Logs","D":"Events E."},"answer":"A"},{"id":104,"section":"All Sections 2","num":31,"text":"What type of telemetry data shows the path and duration of a request as it flows through multiple services?","options":{"A":"Metrics","B":"Traces 33","C":"Logs","D":"Alerts E."},"answer":"B"},{"id":105,"section":"All Sections 2","num":32,"text":"Which open-source monitoring system, graduated by the CNCF, is widely used for collecting and querying time-series metrics in Kubernetes?","options":{"A":"Grafana","B":"Jaeger","C":"Prometheus","D":"Fluentd E."},"answer":"C"},{"id":106,"section":"All Sections 2","num":33,"text":"How does Prometheus typically gather metrics from applications and infrastructure?","options":{"A":"Pushing metrics to endpoints","B":"Pulling metrics via scraping","C":"Reading log files directly","D":"Using kernel probes E."},"answer":"B"},{"id":107,"section":"All Sections 2","num":34,"text":"What language is used to write queries in Prometheus?","options":{"A":"SQL","B":"PromQL","C":"JSONPath","D":"YAML E."},"answer":"B"},{"id":108,"section":"All Sections 2","num":35,"text":"In cloud native cost management, what does \u201dFinOps\u201d primarily focus on?","options":{"A":"Optimizing application code","B":"Managing cloud spending","C":"Improving network security 34","D":"Automating deployments E."},"answer":"B"},{"id":109,"section":"All Sections 2","num":37,"text":"What is the practice of using Git repositories as the single source of truth for defining and managing infrastructure and applications?","options":{"A":"CI/CD","B":"DevOps","C":"GitOps","D":"Infrastructure as Code (IaC) E."},"answer":"C"},{"id":110,"section":"All Sections 2","num":38,"text":"Which core principle differentiates GitOps from general Infrastructure as Code (IaC)?","options":{"A":"Using code for infra config","B":"Automating infrastructure tests","C":"Using Git as the source of truth","D":"Manual deployment approval E."},"answer":"C"},{"id":111,"section":"All Sections 2","num":39,"text":"What does \u201dCI\u201d stand for in the context of application delivery?","options":{"A":"Continuous Integration","B":"Cluster Infrastructure","C":"Container Interface","D":"Cloud Instance 35 E."},"answer":"A"},{"id":112,"section":"All Sections 2","num":40,"text":"What does \u201dCD\u201d stand for in CI/CD?","options":{"A":"Container Deployment","B":"Continuous Delivery/Deployment","C":"Cluster Discovery","D":"Centralized Dashboard E."},"answer":"B"},{"id":113,"section":"All Sections 2","num":41,"text":"Which stage in a typical CI/CD pipeline for Kubernetes usually involves creating a container image?","options":{"A":"Testing","B":"Building","C":"Deployment","D":"Monitoring E."},"answer":"B"},{"id":114,"section":"All Sections 2","num":42,"text":"Which tool is commonly used in CI/CD pipelines to automate the build, test, and deployment processes?","options":{"A":"Kubernetes","B":"Docker","C":"Jenkins / GitLab CI / GitHub Actions","D":"Prometheus E."},"answer":"C"},{"id":115,"section":"All Sections 2","num":43,"text":"What is the primary goal of Application Delivery in a cloud native context?","options":{"A":"To secure the cluster","B":"To monitor resource usage","C":"To reliably deploy manage apps","D":"To provision infrastructure E. 36"},"answer":"C"},{"id":116,"section":"All Sections 2","num":44,"text":"In Kubernetes RBAC (Role-Based Access Control), what defines a set of permissions?","options":{"A":"Role / ClusterRole","B":"ServiceAccount","C":"RoleBinding / ClusterRoleBinding","D":"User E."},"answer":"A"},{"id":117,"section":"All Sections 2","num":46,"text":"If you need a Pod to run on every single Node in the cluster (or a subset), which controller is most suitable?","options":{"A":"Deployment","B":"StatefulSet","C":"DaemonSet","D":"Job E."},"answer":"C"},{"id":118,"section":"All Sections 2","num":47,"text":"What is a primary difference between a Deployment and a StatefulSet?","options":{"A":"StatefulSets manage Pods","B":"Deployments are for databases","C":"StatefulSets provide stable IDs","D":"Deployments use PVs E."},"answer":"C"},{"id":119,"section":"All Sections 2","num":50,"text":"What fundamental concept allows Kubernetes to maintain the desired state declared by the user?","options":{"A":"Imperative Commands","B":"Control Loop / Reconciliation","C":"Manual Scaling","D":"Direct Node Access E."},"answer":"B"},{"id":120,"section":"Kubernetes Fundamentals","num":1,"text":"Which architectural component ensures that the actual state of cluster resources converges towards the desired state defined in their specifications?","options":{"A":"kube-apiserver","B":"kube-scheduler","C":"Controllers (within kube-controller-manager)","D":"kubelet 38","E":"etcd"},"answer":"C"},{"id":121,"section":"Kubernetes Fundamentals","num":2,"text":"A Pod specification includes two containers: one web server and one log shipper. How do these containers communicate e\ufb00iciently over the network within the Pod?","options":{"A":"Via a Kubernetes Service","B":"Via the node\u2019s primary IP address","C":"Via localhost and shared network namespace","D":"Via an automatically created NetworkPolicy","E":"Via distinct Pod IP addresses assigned to each container"},"answer":"C"},{"id":122,"section":"Kubernetes Fundamentals","num":3,"text":"What is the primary role of kubelet on a worker node?","options":{"A":"To schedule Pods onto the node","B":"To store the state of Pods running on the node","C":"To ensure containers described in PodSpecs assigned to its node are running","D":"To manage network routing rules for Services","E":"To authenticate API requests originating from the node"},"answer":"C"},{"id":123,"section":"Kubernetes Fundamentals","num":4,"text":"Which Kubernetes resource provides a mechanism for grouping API objects and providing a scope for names?","options":{"A":"Label","B":"Annotation","C":"Namespace","D":"Deployment","E":"ServiceAccount"},"answer":"C"},{"id":124,"section":"Kubernetes Fundamentals","num":5,"text":"When interacting with the Kubernetes API server using kubectl, what is the typical format used for defining resource manifests?","options":{"A":"JSON","B":"XML","C":"YAML","D":"Protocol Buffers 39","E":"Plain Text"},"answer":"C"},{"id":125,"section":"Kubernetes Fundamentals","num":6,"text":"What core Kubernetes concept allows Deployments to perform rolling updates with zero downtime?","options":{"A":"Managing StatefulSets","B":"Utilizing PersistentVolumes","C":"Incrementally replacing Pods managed by ReplicaSets","D":"Direct communication with the kube-scheduler","E":"Modifying NetworkPolicy rules dynamically"},"answer":"C"},{"id":126,"section":"Kubernetes Fundamentals","num":7,"text":"Which component is responsible for making the ultimate decision about which node a newly created Pod should run on?","options":{"A":"kubelet","B":"kube-apiserver","C":"kube-scheduler","D":"kube-controller-manager","E":"The Pod\u2019s ServiceAccount"},"answer":"C"},{"id":127,"section":"Kubernetes Fundamentals","num":8,"text":"How does Kubernetes typically handle the failure of a container within a Pod?","options":{"A":"By deleting the entire Pod immediately","B":"By restarting the failed container based on the Pod\u2019s restartPolicy","C":"By scheduling a new Pod on a different node","D":"By marking the Node as unschedulable","E":"By alerting the kube-scheduler to find a replacement container"},"answer":"B"},{"id":128,"section":"Kubernetes Fundamentals","num":9,"text":"What distinguishes a Kubernetes Secret from a ConfigMap?","options":{"A":"Secrets are namespaced, ConfigMaps are not","B":"ConfigMaps store configuration data, Secrets store sensitive data (base64 encoded)","C":"Secrets can only be mounted as environment variables, ConfigMaps as files","D":"ConfigMaps are automatically encrypted at rest, Secrets are not 40","E":"Secrets are immutable once created, ConfigMaps are mutable"},"answer":"B"},{"id":129,"section":"Kubernetes Fundamentals","num":11,"text":"What is the purpose of labels in Kubernetes?","options":{"A":"To provide detailed descriptive information about a resource","B":"To define network access rules between resources","C":"To attach identifying metadata for selection and organization","D":"To specify resource requests and limits for containers","E":"To store multi-line configuration data"},"answer":"C"},{"id":130,"section":"Kubernetes Fundamentals","num":12,"text":"When defining a Pod, what does the spec.containers[].image field specify?","options":{"A":"The base operating system for the container","B":"The specific container image (and tag) to run","C":"The command to execute inside the container","D":"The resource limits for the container","E":"The network port the container will listen on"},"answer":"B"},{"id":131,"section":"Kubernetes Fundamentals","num":13,"text":"If a Pod needs access to specific hardware features available only on certain nodes, which scheduling mechanism is most suitable?","options":{"A":"ResourceQuota","B":"NetworkPolicy","C":"PodDisruptionBudget","D":"Taints and Tolerations or Node A\ufb00inity","E":"HorizontalPodAutoscaler 41"},"answer":"D"},{"id":132,"section":"Kubernetes Fundamentals","num":15,"text":"What is the relationship between a Deployment and a ReplicaSet?","options":{"A":"A ReplicaSet manages multiple Deployments","B":"A Deployment watches ReplicaSets for scaling signals","C":"A Deployment declaratively manages ReplicaSets to orchestrate Pod updates","D":"ReplicaSets are used only for stateful applications, Deployments for stateless","E":"They are independent controllers managing Pod lifecycles"},"answer":"C"},{"id":133,"section":"Kubernetes Fundamentals","num":16,"text":"The Kubernetes API server performs several actions when receiving a request. Which action verifies if the authenticated user is allowed to perform the requested operation?","options":{"A":"Authentication","B":"Admission Control","C":"Authorization","D":"Rate Limiting","E":"Validation"},"answer":"C"},{"id":134,"section":"Kubernetes Fundamentals","num":17,"text":"What is the primary function of etcd within the Kubernetes architecture?","options":{"A":"To run the container runtime interface","B":"To schedule Pods across available nodes","C":"To provide reliable, distributed storage for cluster state and configuration 42","D":"To manage network policies and ingress rules","E":"To execute health checks against running containers"},"answer":"C"},{"id":135,"section":"Kubernetes Fundamentals","num":18,"text":"Which field in a Pod\u2019s specification is crucial for the kubescheduler to determine if a node has su\ufb00icient resources?","options":{"A":"spec.nodeName","B":"spec.containers[].ports","C":"spec.containers[].resources.requests","D":"spec.serviceAccountName","E":"spec.restartPolicy"},"answer":"C"},{"id":136,"section":"Kubernetes Fundamentals","num":19,"text":"What fundamental concept allows Kubernetes controllers to operate effectively without needing constant instructions?","options":{"A":"Imperative command execution","B":"The reconciliation loop (Control Loop)","C":"Direct manipulation of etcd","D":"Event-driven webhooks","E":"Stateful session management"},"answer":"B"},{"id":137,"section":"Kubernetes Fundamentals","num":20,"text":"Which OCI (Open Container Initiative) specification defines how container runtimes should execute containers?","options":{"A":"Image Specification","B":"Distribution Specification","C":"Runtime Specification (CRI is Kubernetes\u2019 interface to this)","D":"Network Specification (CNI is related)","E":"Storage Specification"},"answer":"C"},{"id":138,"section":"Kubernetes Fundamentals","num":21,"text":"You need to provide non-sensitive configuration data (like a URL endpoint or logging level) to a Pod. Which resource is most appropriate?","options":{"A":"Secret","B":"ConfigMap","C":"Annotation 43","D":"ResourceQuota","E":"DownwardAPI"},"answer":"B"},{"id":139,"section":"Kubernetes Fundamentals","num":22,"text":"If you want a specific Pod to run on every node in the cluster (or a subset matching certain criteria), which workload resource should you use?","options":{"A":"Deployment","B":"StatefulSet","C":"DaemonSet","D":"Job","E":"ReplicaSet"},"answer":"C"},{"id":140,"section":"Kubernetes Fundamentals","num":23,"text":"What does it mean for the Kubernetes API to be \u201ddeclarative\u201d?","options":{"A":"API calls must be made sequentially","B":"Users specify the desired end state, not the steps to reach it","C":"The API only accepts YAML formatted requests","D":"API responses always include the full resource specification","E":"The API can only create resources, not update or delete them"},"answer":"B"},{"id":141,"section":"Kubernetes Fundamentals","num":24,"text":"Which mechanism prevents the kube-scheduler from placing Pods on a Node that is undergoing maintenance or is otherwise unsuitable?","options":{"A":"ResourceQuotas","B":"NetworkPolicies","C":"Taints on the Node and Tolerations on the Pod","D":"PodDisruptionBudgets","E":"PriorityClasses"},"answer":"C"},{"id":142,"section":"Kubernetes Fundamentals","num":26,"text":"Which component translates a Service\u2019s virtual IP address into actual Pod IP addresses on each node?","options":{"A":"etcd","B":"kube-apiserver","C":"coredns / kube-dns","D":"kube-proxy","E":"kubelet"},"answer":"D"},{"id":143,"section":"Kubernetes Fundamentals","num":27,"text":"A StatefulSet is often preferred over a Deployment for running databases. Why?","options":{"A":"StatefulSets have simpler configuration","B":"Deployments cannot use Persistent Storage","C":"StatefulSets provide stable, unique network IDs and persistent storage per Pod","D":"Deployments automatically handle database schema migrations","E":"StatefulSets require less CPU and memory resources"},"answer":"C"},{"id":144,"section":"Kubernetes Fundamentals","num":28,"text":"What is the primary goal of the Open Container Initiative (OCI)?","options":{"A":"To create a commercial container platform","B":"To define open standards around container formats and runtime","C":"To manage the Kubernetes source code repository","D":"To develop container networking plugins (CNI)","E":"To provide free container image hosting"},"answer":"B"},{"id":145,"section":"Kubernetes Fundamentals","num":30,"text":"What is the function of an Admission Controller in the Kubernetes API request lifecycle?","options":{"A":"To authenticate the user making the request","B":"To authorize the requested operation","C":"To mutate or validate API objects before they are persisted in etcd","D":"To schedule the Pod onto a suitable node","E":"To route network tra\ufb00ic to the correct Pod"},"answer":"C"},{"id":146,"section":"Kubernetes Fundamentals","num":31,"text":"Which resource defines constraints on the total amount of compute resources (CPU, memory) that can be consumed within a specific Namespace?","options":{"A":"LimitRange","B":"ResourceQuota","C":"NetworkPolicy","D":"PodSecurityPolicy / PodSecurityAdmission","E":"PriorityClass"},"answer":"B"},{"id":147,"section":"Kubernetes Fundamentals","num":32,"text":"Consider a Pod that needs to perform a one-time initialization task before its main application container starts. Which container type is best suited for this?","options":{"A":"Sidecar Container","B":"Ephemeral Container","C":"Init Container","D":"Main Application Container","E":"Job Container"},"answer":"C"},{"id":148,"section":"Kubernetes Fundamentals","num":33,"text":"What is the purpose of the metadata.ownerReferences field in a Kubernetes object?","options":{"A":"To specify the user who created the object","B":"To link the object to its managing controller (e.g., ReplicaSet to Deployment) 46","C":"To list labels used for selecting the object","D":"To store annotations related to the object\u2019s owner","E":"To define the Namespace the object belongs to"},"answer":"B"},{"id":149,"section":"Kubernetes Fundamentals","num":34,"text":"Which statement best describes the relationship between Kubernetes and Docker (as of 2025)?","options":{"A":"Kubernetes requires Docker to be installed on all nodes.","B":"Docker is the only container runtime supported by Kubernetes.","C":"Kubernetes primarily interacts with container runtimes via CRI (e.g., containerd, CRI-O), abstracting Docker.","D":"Docker manages the Kubernetes control plane components.","E":"Kubernetes is a component within the Docker Enterprise platform."},"answer":"C"},{"id":150,"section":"Kubernetes Fundamentals","num":35,"text":"If multiple Pods need to share persistent data, which volume type allows simultaneous mounting by multiple Pods (potentially with read/write access)?","options":{"A":"hostPath","B":"emptyDir","C":"A PersistentVolume with an accessMode like ReadWriteMany (RWX)","D":"secret volume","E":"configMap volume"},"answer":"C"},{"id":151,"section":"Kubernetes Fundamentals","num":37,"text":"What is the purpose of a LimitRange object within a Namespace?","options":{"A":"To limit the total resource usage of the entire Namespace 47","B":"To set default resource requests/limits for containers and validate min/max bounds","C":"To restrict network tra\ufb00ic between Pods in the Namespace","D":"To control which users can create resources in the Namespace","E":"To define storage quotas for PersistentVolumeClaims"},"answer":"B"},{"id":152,"section":"Kubernetes Fundamentals","num":38,"text":"Which kubectl command would you use to apply a configuration defined in my-app.yaml declaratively?","options":{"A":"kubectl create -f my-app.yaml","B":"kubectl replace -f my-app.yaml","C":"kubectl apply -f my-app.yaml","D":"kubectl patch -f my-app.yaml","E":"kubectl run -f my-app.yaml"},"answer":"C"},{"id":153,"section":"Kubernetes Fundamentals","num":39,"text":"How does the kube-scheduler handle Pods with defined a\ufb00inity rules?","options":{"A":"It ignores a\ufb00inity rules if resource requests cannot be met.","B":"It uses a\ufb00inity rules as the primary factor for node selection.","C":"It considers a\ufb00inity/anti-a\ufb00inity rules during the filtering and scoring phases.","D":"It delegates a\ufb00inity processing to the kubelet.","E":"It only processes podA\ufb00inity, not nodeA\ufb00inity."},"answer":"C"},{"id":154,"section":"Kubernetes Fundamentals","num":40,"text":"What is the concept of \u201ddesired state reconciliation\u201d fundamental to Kubernetes?","options":{"A":"Users manually reconcile cluster state using kubectl.","B":"Controllers continuously observe and work to match actual state to declared state.","C":"etcd automatically corrects discrepancies between desired and actual state.","D":"kubelet reconciles container state based solely on node health.","E":"The API server rejects any configuration that deviates from the current state."},"answer":"B"},{"id":155,"section":"Kubernetes Fundamentals","num":42,"text":"What type of container volume shares the Pod\u2019s lifecycle and is initially empty, useful for temporary data sharing between containers in a Pod?","options":{"A":"hostPath","B":"persistentVolumeClaim","C":"emptyDir","D":"nfs","E":"secret"},"answer":"C"},{"id":156,"section":"Kubernetes Fundamentals","num":43,"text":"Which Kubernetes API endpoint would kubectl get pods likely interact with?","options":{"A":"/api/v1/nodes","B":"/api/v1/namespaces/namespace/pods","C":"/apis/apps/v1/deployments","D":"/healthz","E":"/metrics"},"answer":"B"},{"id":157,"section":"Kubernetes Fundamentals","num":44,"text":"What is a potential consequence of setting container resource limits much higher than requests?","options":{"A":"Improved Pod scheduling priority","B":"Reduced cost for node resources","C":"Potential for node resource exhaustion and Pod eviction (\u201dnoisy neighbor\u201d effect)","D":"Faster container startup times","E":"Automatic vertical scaling of the container"},"answer":"C"},{"id":158,"section":"Kubernetes Fundamentals","num":46,"text":"How are API resources like Deployments and StatefulSets grouped in the Kubernetes API?","options":{"A":"Under the core v1 API group (/api/v1)","B":"They are not part of any API group.","C":"Under specific API groups like apps/v1","D":"Under the scheduling.k8s.io API group","E":"Under the batch/v1 API group"},"answer":"C"},{"id":159,"section":"Kubernetes Fundamentals","num":48,"text":"Which resource configuration allows a Pod to securely access the Kubernetes API server using the Pod\u2019s own identity?","options":{"A":"Mounting a Secret containing API keys","B":"Configuring a ServiceAccount for the Pod and mounting its token","C":"Using hostNetwork: true","D":"Defining an Ingress resource","E":"Setting environment variables with kubeconfig data"},"answer":"B"},{"id":160,"section":"Kubernetes Fundamentals","num":50,"text":"In a typical Kubernetes cluster setup, where does the kubescheduler run?","options":{"A":"On every worker node","B":"As a Pod managed by a DaemonSet","C":"As a static Pod or systemd service on a control plane node","D":"Inside the etcd cluster","E":"As part of the kubelet binary"},"answer":"C"},{"id":161,"section":"Container Orchestration","num":1,"text":"What is a primary motivation for adopting container orchestration beyond simply running containers with a runtime like containerd?","options":{"A":"To achieve higher density of containers on a single host.","B":"To automate deployment, scaling, healing, and networking of distributed applications.","C":"To simplify the process of building container images from source code.","D":"To provide a standardized container image format for portability.","E":"To enforce strict kernel isolation between containers."},"answer":"B"},{"id":162,"section":"Container Orchestration","num":2,"text":"The Container Runtime Interface (CRI) in Kubernetes serves what key purpose?","options":{"A":"To define the standard for container image formats.","B":"To provide an API for kubelet to interact with different container runtimes.","C":"To manage network plugin configurations (CNI). 51","D":"To enforce security policies for container execution.","E":"To schedule containers onto nodes."},"answer":"B"},{"id":163,"section":"Container Orchestration","num":3,"text":"In Kubernetes RBAC, what is the difference between a Role and a ClusterRole?","options":{"A":"Role grants permissions to users, ClusterRole to ServiceAccounts.","B":"Role is for read-only access, ClusterRole for write access.","C":"Role is namespaced, ClusterRole is cluster-wide.","D":"Role defines permissions, ClusterRole binds permissions to subjects.","E":"Role is for built-in components, ClusterRole for custom resources."},"answer":"C"},{"id":164,"section":"Container Orchestration","num":4,"text":"Which Kubernetes networking component is responsible for ensuring that tra\ufb00ic sent to a Service\u2019s IP address is correctly routed to one of its backing Pods?","options":{"A":"CNI plugin","B":"kube-dns / CoreDNS","C":"kube-proxy","D":"Ingress controller","E":"The API server\u2019s endpoint controller."},"answer":"C"},{"id":165,"section":"Container Orchestration","num":5,"text":"What fundamental problem does a Service Mesh aim to solve for microservices that is not inherently addressed by basic Kubernetes Services?","options":{"A":"Providing stable IP addresses for Pods.","B":"Exposing services to external tra\ufb00ic via HTTP/S routing.","C":"Adding advanced observability, security (mTLS), and tra\ufb00ic control between services.","D":"Managing persistent storage for stateful applications.","E":"Automating the build and deployment of container images."},"answer":"C"},{"id":166,"section":"Container Orchestration","num":6,"text":"What is the role of a PersistentVolumeClaim (PVC) in Kubernetes storage?","options":{"A":"It defines a specific type of storage backend (e.g., SSD, HDD).","B":"It represents a piece of provisioned storage available in the cluster. 52","C":"It is a request for storage by a user/Pod, consuming a PersistentVolume.","D":"It directly attaches a node\u2019s local disk to a Pod.","E":"It manages the lifecycle of storage snapshots."},"answer":"C"},{"id":167,"section":"Container Orchestration","num":7,"text":"How does container orchestration typically facilitate \u201dself-healing\u201d for applications?","options":{"A":"By automatically applying security patches to container images.","B":"By using AI to predict and prevent application failures.","C":"By monitoring application health and automatically restarting or replacing failed instances.","D":"By providing detailed debugging tools for developers to fix application bugs faster.","E":"By load balancing tra\ufb00ic away from nodes with high CPU usage."},"answer":"C"},{"id":168,"section":"Container Orchestration","num":9,"text":"What is the primary purpose of a ServiceAccount in Kubernetes security?","options":{"A":"To provide an identity for human users to log into the cluster.","B":"To define permissions for accessing Kubernetes API resources.","C":"To provide a distinct identity for processes running inside Pods to interact with the API.","D":"To securely store API tokens and certificates for external services.","E":"To encrypt network tra\ufb00ic between Pods."},"answer":"C"},{"id":169,"section":"Container Orchestration","num":10,"text":"What role does the Container Network Interface (CNI) play in Kubernetes networking? 53","options":{"A":"It defines the API for how kube-proxy implements Services.","B":"It provides a specification for writing plugins to configure network interfaces for Pods.","C":"It manages DNS resolution for Services and Pods within the cluster.","D":"It enforces network policies to restrict tra\ufb00ic flow between Pods.","E":"It provides a secure tunnel for control plane communication."},"answer":"B"},{"id":170,"section":"Container Orchestration","num":11,"text":"Which feature is typically NOT offered as a core capability by a Service Mesh?","options":{"A":"Automatic mTLS encryption between services.","B":"Fine-grained tra\ufb00ic routing (e.g., canary deployments, A/B testing).","C":"Distributed tracing and observability metrics for inter-service communication.","D":"Container image vulnerability scanning.","E":"Resiliency features like retries and timeouts."},"answer":"D"},{"id":171,"section":"Container Orchestration","num":12,"text":"What is the primary function of a StorageClass in Kubernetes?","options":{"A":"To directly provide storage to a Pod.","B":"To define different \u201dclasses\u201d or types of storage for dynamic provisioning.","C":"To claim a specific PersistentVolume for use.","D":"To backup and restore data from PersistentVolumes.","E":"To limit the amount of storage a namespace can consume."},"answer":"B"},{"id":172,"section":"Container Orchestration","num":13,"text":"How does declarative configuration, a common feature in container orchestration, improve system reliability compared to imperative commands?","options":{"A":"It executes commands faster.","B":"It allows users to specify the exact sequence of operations for desired outcomes.","C":"It describes the desired state, allowing the orchestrator to continuously reconcile.","D":"It requires less YAML or JSON to define resources.","E":"It automatically selects the most performant hardware. 54"},"answer":"C"},{"id":173,"section":"Container Orchestration","num":14,"text":"What is the significance of the dockershim component being removed from Kubernetes starting from v1.24?","options":{"A":"Kubernetes no longer supports Docker-formatted container images.","B":"Developers must use a different command-line tool instead of docker build.","C":"Kubernetes now directly uses container runtimes that implement CRI, like containerd.","D":"All existing Docker containers must be rebuilt using a new OCI tool.","E":"Pods can no longer run multiple containers."},"answer":"C"},{"id":174,"section":"Container Orchestration","num":15,"text":"When a NetworkPolicy in Kubernetes selects a Pod, what does it primarily control?","options":{"A":"The Pod\u2019s ability to access external services outside the cluster.","B":"The amount of network bandwidth the Pod can consume.","C":"The ingress and egress network tra\ufb00ic for that Pod at L3/L4.","D":"The DNS resolution behavior for the Pod.","E":"The encryption of data in transit for the Pod."},"answer":"C"},{"id":175,"section":"Container Orchestration","num":16,"text":"What is the primary mechanism for service discovery within a Kubernetes cluster for applications running in Pods?","options":{"A":"Manually configuring IP addresses in application code.","B":"Using NodePort services and node IPs.","C":"Kubernetes DNS (e.g., CoreDNS) resolving Service names to ClusterIPs.","D":"Broadcasting service availability via UDP multicast.","E":"Relying on a Service Mesh sidecar proxy."},"answer":"C"},{"id":176,"section":"Container Orchestration","num":17,"text":"If a company wants to implement zero-trust security for interservice communication within their Kubernetes cluster, what would a Service Mesh primarily contribute?","options":{"A":"Encrypting persistent data at rest.","B":"Enforcing strong authentication and authorization for kubectl users.","C":"Providing automatic mutual TLS (mTLS) between all services in the mesh. 55","D":"Scanning Pods for known vulnerabilities.","E":"Managing firewall rules at the cluster\u2019s edge."},"answer":"C"},{"id":177,"section":"Container Orchestration","num":18,"text":"The Container Storage Interface (CSI) was developed to address what challenge in Kubernetes storage?","options":{"A":"To provide a standard for defining StorageClass parameters.","B":"To enable third-party storage vendors to develop plugins without modifying core Kubernetes code.","C":"To improve the performance of hostPath volumes.","D":"To automate the backup and restore of PersistentVolumes.","E":"To define how containers should access configuration data."},"answer":"B"},{"id":178,"section":"Container Orchestration","num":19,"text":"Which of these is NOT a typical benefit of using a container orchestrator for managing applications?","options":{"A":"Improved resource utilization through bin packing.","B":"Simplified application code logic for handling infrastructure failures.","C":"Abstracted underlying infrastructure differences.","D":"Automatic conversion of monolithic applications to microservices.","E":"Enhanced scalability and availability of applications."},"answer":"D"},{"id":179,"section":"Container Orchestration","num":20,"text":"What is a key characteristic of runc, often used by higher-level runtimes like containerd?","options":{"A":"It\u2019s a full-fledged container orchestrator.","B":"It provides a command-line tool for building OCI-compliant images.","C":"It\u2019s a low-level OCI runtime responsible for spawning and running containers.","D":"It\u2019s a CNI plugin for configuring Pod networking.","E":"It\u2019s a distributed key-value store for container metadata."},"answer":"C"},{"id":180,"section":"Container Orchestration","num":21,"text":"What is the primary purpose of Secrets in Kubernetes, and how are they typically made available to Pods?","options":{"A":"To store arbitrary non-sensitive configuration; as environment variables or files. 56","B":"To store sensitive data (e.g., passwords, tokens); as environment variables or volume mounts.","C":"To define network policies; applied directly by kubelet.","D":"To store TLS certificates for Ingress; only used by Ingress controllers.","E":"To store container image pull credentials; only used by kubelet."},"answer":"B"},{"id":181,"section":"Container Orchestration","num":22,"text":"An Ingress resource in Kubernetes provides what type of functionality?","options":{"A":"L4 TCP/UDP load balancing for internal services.","B":"Management of external HTTP/S access to services, with host/path based routing.","C":"Network isolation between Pods within the same namespace.","D":"Dynamic provisioning of persistent storage for web servers.","E":"A CNI plugin implementation for advanced networking features."},"answer":"B"},{"id":182,"section":"Container Orchestration","num":23,"text":"In the context of a Service Mesh, what does \u201dtra\ufb00ic splitting\u201d commonly refer to?","options":{"A":"Dividing network bandwidth equally among all services.","B":"Routing a percentage of tra\ufb00ic to different versions of a service (e.g., for canary).","C":"Encrypting only a portion of the tra\ufb00ic between services.","D":"Splitting large data packets into smaller frames for transmission.","E":"Blocking tra\ufb00ic from specific IP address ranges."},"answer":"B"},{"id":183,"section":"Container Orchestration","num":24,"text":"If a Pod needs temporary scratch space that is empty upon creation and deleted when the Pod terminates, which volume type is most appropriate?","options":{"A":"hostPath","B":"persistentVolumeClaim","C":"emptyDir","D":"configMap","E":"nfs"},"answer":"C"},{"id":184,"section":"Container Orchestration","num":27,"text":"In Kubernetes, what is the purpose of an EndpointSlice object in relation to a Service?","options":{"A":"To define the external IP address for a LoadBalancer Service.","B":"To store the DNS configuration for a Service.","C":"To e\ufb00iciently track and provide the IP addresses and ports of Pods backing a Service.","D":"To enforce network policies for tra\ufb00ic destined to a Service.","E":"To manage TLS termination for a Service."},"answer":"C"},{"id":185,"section":"Container Orchestration","num":28,"text":"Which component of a Service Mesh architecture is typically injected as a sidecar container into application Pods?","options":{"A":"The control plane\u2019s central policy manager.","B":"The data plane proxy (e.g., Envoy, Linkerd2-proxy).","C":"The certificate authority for issuing mTLS certificates.","D":"The metrics collection and aggregation server. 58","E":"The UI dashboard for visualizing mesh topology."},"answer":"B"},{"id":186,"section":"Container Orchestration","num":29,"text":"A StatefulSet requires stable, unique network identifiers for its Pods. How is this typically achieved in Kubernetes?","options":{"A":"By manually assigning static IP addresses to each Pod.","B":"Through a headless Service that creates DNS records for each Pod.","C":"Using hostNetwork: true for all Pods in the StatefulSet.","D":"By relying on CNI plugins to assign predictable IPs from a predefined range.","E":"By using NetworkPolicy to restrict Pod IPs."},"answer":"B"},{"id":187,"section":"Container Orchestration","num":30,"text":"When using dynamic provisioning for Kubernetes storage, what happens if a PersistentVolumeClaim requests a StorageClass that does not exist?","options":{"A":"The PVC remains in a Pending state indefinitely or until the class is created.","B":"Kubernetes automatically creates a default StorageClass and uses it.","C":"The Pod attempting to use the PVC will fail to start with a network error.","D":"The PVC will use any available PersistentVolume regardless of its StorageClass.","E":"The request defaults to using hostPath storage on the assigned node."},"answer":"A"},{"id":188,"section":"Container Orchestration","num":31,"text":"What is the primary benefit of using orchestration for rolling updates compared to manual, script-based updates?","options":{"A":"Faster individual container restart times.","B":"Guaranteed zero cost for update operations.","C":"Automated health checks, progressive rollout, and easier rollback capabilities.","D":"Elimination of the need for container image registries.","E":"In-place binary patching of running application code."},"answer":"C"},{"id":189,"section":"Container Orchestration","num":32,"text":"What is a key difference between containerd and Docker Engine in the context of Kubernetes (post-dockershim removal)? 59","options":{"A":"containerd cannot run Docker-formatted images; Docker Engine can.","B":"Docker Engine includes build tools and a CLI; containerd is a core runtime.","C":"containerd is not OCI compliant; Docker Engine is.","D":"Docker Engine implements CRI directly; containerd requires a shim.","E":"containerd is only for Linux; Docker Engine is cross-platform."},"answer":"B"},{"id":190,"section":"Container Orchestration","num":33,"text":"How does Role-Based Access Control (RBAC) in Kubernetes contribute to the principle of least privilege?","options":{"A":"By encrypting all API communication by default.","B":"By ensuring all Pods run with minimal resource requests and limits.","C":"By allowing administrators to grant users/ServiceAccounts only necessary permissions.","D":"By automatically rotating credentials for ServiceAccounts.","E":"By restricting network access between namespaces."},"answer":"C"},{"id":191,"section":"Container Orchestration","num":34,"text":"Which type of Kubernetes Service is typically used to expose an application to tra\ufb00ic from outside the Kubernetes cluster using a cloud provider\u2019s load balancer?","options":{"A":"ClusterIP","B":"NodePort","C":"LoadBalancer","D":"ExternalName","E":"Headless Service"},"answer":"C"},{"id":192,"section":"Container Orchestration","num":35,"text":"What is the concept of a \u201dcontrol plane\u201d in a Service Mesh architecture?","options":{"A":"The set of sidecar proxies running alongside application containers.","B":"The central components that manage and configure the data plane proxies.","C":"The application code responsible for handling business logic.","D":"The underlying Kubernetes cluster nodes.","E":"The network infrastructure connecting the cluster to the internet."},"answer":"B"},{"id":193,"section":"Container Orchestration","num":37,"text":"A PodSecurityContext can be used to define security settings that apply to:","options":{"A":"All Pods within a specific Namespace.","B":"A specific container within a Pod.","C":"All containers within a Pod, and potentially the Pod\u2019s volumes.","D":"Only the network policies associated with a Pod.","E":"The ServiceAccount used by the Pod."},"answer":"C"},{"id":194,"section":"Container Orchestration","num":38,"text":"What is a key benefit of using the Container Runtime Interface (CRI) from Kubernetes\u2019 perspective?","options":{"A":"It simplifies the container image building process for developers.","B":"It allows Kubernetes to be independent of specific container runtime implementations.","C":"It provides a built-in metrics collection system for containers.","D":"It enables running virtual machines alongside containers within the same Pod.","E":"It standardizes the format for container log messages."},"answer":"B"},{"id":195,"section":"Container Orchestration","num":39,"text":"What is the main difference between iptables and IPVS modes for kube-proxy?","options":{"A":"iptables mode is newer and supports more advanced features.","B":"IPVS is designed for smaller clusters; iptables for larger ones.","C":"iptables uses linked lists for rules; IPVS uses hash tables, often better for scale. 61","D":"IPVS mode does not require kube-proxy to run on worker nodes.","E":"iptables mode can only handle HTTP tra\ufb00ic; IPVS handles all TCP/UDP."},"answer":"C"},{"id":196,"section":"Container Orchestration","num":40,"text":"When would you typically choose a Service Mesh over just using Kubernetes NetworkPolicies for securing inter-Pod communication?","options":{"A":"When you need basic L3/L4 firewalling based on Pod labels.","B":"When you require application-layer (L7) tra\ufb00ic management, mTLS, and observability.","C":"When you need to expose services externally using an Ingress controller.","D":"When you want to restrict a Pod\u2019s access to host resources.","E":"When the primary concern is node-to-node encryption."},"answer":"B"},{"id":197,"section":"Container Orchestration","num":41,"text":"How does a VolumeSnapshot object in Kubernetes relate to a PersistentVolumeClaim?","options":{"A":"It defines the maximum size a PVC can grow to.","B":"It\u2019s a request to create a point-in-time copy of the data in a PVC.","C":"It\u2019s a type of PVC that uses ephemeral local storage.","D":"It specifies the encryption key to be used for a PVC.","E":"It provides a template for creating multiple identical PVCs."},"answer":"B"},{"id":198,"section":"Container Orchestration","num":42,"text":"Which Kubernetes security mechanism would you use to prevent containers in a Pod from running as the root user or gaining new privileges?","options":{"A":"NetworkPolicy","B":"Role and RoleBinding","C":"SecurityContext (e.g., runAsNonRoot: true, allowPrivilegeEscalation: false)","D":"Secret storing user credentials.","E":"LimitRange defining CPU limits."},"answer":"C"},{"id":199,"section":"Container Orchestration","num":43,"text":"What is the primary advantage of a \u201dheadless\u201d Service in Kubernetes? 62","options":{"A":"It provides a stable ClusterIP for load balancing.","B":"It automatically creates an external load balancer for the Service.","C":"It allows direct Pod IP discovery via DNS, often used with StatefulSets.","D":"It encrypts all tra\ufb00ic to the Pods it selects.","E":"It exposes Pods on every node using a fixed NodePort."},"answer":"C"},{"id":200,"section":"Container Orchestration","num":45,"text":"What does the accessModes field (e.g., ReadWriteOnce, ReadOnlyMany, ReadWriteMany) on a PersistentVolume signify?","options":{"A":"The speed of the underlying storage (e.g., SSD vs. HDD).","B":"The encryption status of the volume.","C":"How the volume can be mounted by nodes and Pods.","D":"The backup policy for the volume.","E":"The geographical region where the storage is located."},"answer":"C"},{"id":201,"section":"Container Orchestration","num":46,"text":"What differentiates a PodSecurityPolicy (deprecated) or its successor (Pod Security Admission) from a NetworkPolicy?","options":{"A":"PodSecurityPolicy controls network access; NetworkPolicy controls Pod privileges.","B":"PodSecurityPolicy defines what a Pod can do (e.g., host access, privileges); NetworkPolicy defines network connectivity.","C":"Both control the same aspects but at different scopes (namespace vs. cluster).","D":"NetworkPolicy is implemented by CNI; PodSecurityPolicy by the runtime. 63","E":"PodSecurityPolicy is for ingress; NetworkPolicy is for egress."},"answer":"B"},{"id":202,"section":"Container Orchestration","num":47,"text":"How does Kubernetes DNS enable service discovery for a Service named my-svc in namespace my-ns from another Pod in the same namespace?","options":{"A":"The Pod queries for my-svc.my-ns.svc.cluster.local.","B":"The Pod queries for my-svc.","C":"The Pod queries for the ClusterIP of my-svc directly.","D":"kube-proxy injects the IP of my-svc into the Pod\u2019s /etc/hosts.","E":"Pods cannot discover services in the same namespace via DNS."},"answer":"B"},{"id":203,"section":"Container Orchestration","num":48,"text":"What is the primary purpose of the volumeMode field (e.g., Filesystem, Block) in a PersistentVolume and PersistentVolumeClaim?","options":{"A":"To specify whether the volume should be encrypted.","B":"To indicate if the volume supports snapshots.","C":"To determine if the volume should be presented as a mounted filesystem or a raw block device.","D":"To define the accessModes allowed for the volume.","E":"To set the default permissions for files created on the volume."},"answer":"C"},{"id":204,"section":"Container Orchestration","num":49,"text":"If a container image specifies a USER instruction, but the Pod\u2019s SecurityContext also defines runAsUser, which value typically takes precedence?","options":{"A":"The USER instruction in the Dockerfile.","B":"The runAsUser from the Pod\u2019s SecurityContext.","C":"Neither; the container will run as root by default.","D":"The values are merged, leading to an error.","E":"The kubelet decides based on node configuration."},"answer":"B"},{"id":205,"section":"Container Orchestration","num":50,"text":"One of the challenges in early container adoption was managing many containers across many hosts. What core capability did orchestrators bring to solve this directly?","options":{"A":"Standardization of container image formats. 64","B":"Automated cluster-wide scheduling and resource management.","C":"Tools for building smaller container images.","D":"Secure private container image registries.","E":"Faster container boot times."},"answer":"B"},{"id":206,"section":"Cloud Native Architecture","num":1,"text":"Which Kubernetes autoscaling mechanism adjusts the CPU and memory requests and limits of existing Pods based on historical usage data?","options":{"A":"Horizontal Pod Autoscaler (HPA)","B":"Cluster Autoscaler (CA)","C":"Vertical Pod Autoscaler (VPA)","D":"Node Problem Detector (NPD)","E":"Custom Pod Autoscaler (CPA)"},"answer":"C"},{"id":207,"section":"Cloud Native Architecture","num":2,"text":"What is the fundamental characteristic of a \u201dServerless\u201d computing model from the developer\u2019s perspective?","options":{"A":"The complete absence of servers in the underlying infrastructure.","B":"The ability to run code without managing or provisioning underlying servers or infrastructure.","C":"The use of specialized hardware accelerators for function execution.","D":"A pricing model based solely on CPU cycles consumed.","E":"The requirement to write code only in specific languages like Node.js or Python."},"answer":"B"},{"id":208,"section":"Cloud Native Architecture","num":3,"text":"What is the primary role of the Cloud Native Computing Foundation (CNCF)?","options":{"A":"To develop and sell commercial distributions of Kubernetes.","B":"To define and enforce specific implementation details for cloud provider services.","C":"To host and nurture open source projects, fostering collaboration in the cloud native ecosystem.","D":"To directly manage the development lifecycle of the Linux kernel. 65","E":"To certify individual developers as cloud native experts through exams only."},"answer":"C"},{"id":209,"section":"Cloud Native Architecture","num":4,"text":"In a typical cloud native environment, which persona is primarily focused on building and maintaining the underlying platform (e.g., Kubernetes cluster) itself?","options":{"A":"Application Developer","B":"End User","C":"Platform Engineer / Operator / SRE","D":"Data Scientist","E":"Business Analyst"},"answer":"C"},{"id":210,"section":"Cloud Native Architecture","num":5,"text":"Why are open standards like the OCI specifications (Image Format, Runtime) crucial for the health of the container ecosystem?","options":{"A":"They guarantee containers will run faster than virtual machines.","B":"They enforce the use of a single vendor\u2019s container tools for consistency.","C":"They promote interoperability and portability, preventing vendor lock-in and fostering innovation.","D":"They eliminate the need for container security scanning.","E":"They define the API specifications for Kubernetes itself."},"answer":"C"},{"id":211,"section":"Cloud Native Architecture","num":6,"text":"The Horizontal Pod Autoscaler (HPA) in Kubernetes primarily makes scaling decisions based on what kind of information?","options":{"A":"Historical resource usage patterns over weeks.","B":"The number of nodes currently available in the cluster.","C":"Observed metrics like CPU utilization, memory usage, or custom metrics from Pods.","D":"The declared priorityClassName of the Pods.","E":"The size of the container images being used."},"answer":"C"},{"id":212,"section":"Cloud Native Architecture","num":7,"text":"Which statement best describes Functions-as-a-Service (FaaS), a common implementation of serverless?","options":{"A":"A platform for running long-lived, stateful applications with persistent connections. 66","B":"An architecture where applications are decomposed into large, independently deployable services.","C":"A model for executing stateless, event-triggered code functions without managing server infrastructure.","D":"A service that automatically converts monolithic applications into containerized microservices.","E":"A managed Kubernetes offering from a cloud provider."},"answer":"C"},{"id":213,"section":"Cloud Native Architecture","num":9,"text":"Which persona is most likely to interact directly with kubectl daily to deploy, troubleshoot, and manage applications running on the Kubernetes platform?","options":{"A":"Platform Operator managing the cluster infrastructure.","B":"Application Developer deploying and managing their specific microservices.","C":"End User accessing the application through a web browser.","D":"CNCF maintainer reviewing project proposals.","E":"Security auditor reviewing RBAC policies."},"answer":"B"},{"id":214,"section":"Cloud Native Architecture","num":10,"text":"The Container Network Interface (CNI) standard primarily addresses which aspect of container orchestration?","options":{"A":"Container image building and distribution.","B":"Container runtime execution and lifecycle management.","C":"Network connectivity and IP address management for containers/Pods.","D":"Persistent storage provisioning and attachment for containers.","E":"Security policy enforcement within containers. 67"},"answer":"C"},{"id":215,"section":"Cloud Native Architecture","num":11,"text":"What is the primary function of the Cluster Autoscaler (CA) in Kubernetes?","options":{"A":"To adjust the number of replicas for a Deployment based on CPU load.","B":"To modify the resource requests/limits for Pods based on usage.","C":"To add or remove worker nodes from the cluster based on Pod scheduling pressure.","D":"To automatically update Kubernetes control plane components.","E":"To balance network tra\ufb00ic evenly across all nodes."},"answer":"C"},{"id":216,"section":"Cloud Native Architecture","num":12,"text":"What distinguishes serverless platforms (like Knative or FaaS) from traditional Platform-as-a-Service (PaaS) regarding scaling?","options":{"A":"PaaS cannot scale automatically; Serverless can.","B":"Serverless platforms can typically scale down to zero instances when idle; PaaS often cannot.","C":"PaaS scales based on node count; Serverless scales based on function memory size.","D":"Serverless platforms only support vertical scaling; PaaS supports horizontal scaling.","E":"PaaS requires manual intervention for all scaling operations."},"answer":"B"},{"id":217,"section":"Cloud Native Architecture","num":13,"text":"What is the role of a CNCF Special Interest Group (SIG) or Technical Advisory Group (TAG)?","options":{"A":"To directly employ developers working on CNCF projects.","B":"To provide commercial support contracts for CNCF software.","C":"To provide technical leadership and coordinate efforts within specific domains or projects.","D":"To vote on which projects should be accepted into the CNCF Sandbox.","E":"To manage the financial budget of the CNCF."},"answer":"C"},{"id":218,"section":"Cloud Native Architecture","num":14,"text":"An Application Developer using a cloud native platform is primarily concerned with which of the following?","options":{"A":"Managing etcd backups and restores for the cluster. 68","B":"Writing application code, defining deployment manifests, and configuring CI/CD pipelines.","C":"Patching the operating system on the cluster nodes.","D":"Configuring the CNI plugin for optimal network performance.","E":"Selecting the physical hardware for the worker nodes."},"answer":"B"},{"id":219,"section":"Cloud Native Architecture","num":16,"text":"When using Horizontal Pod Autoscaling (HPA) based on custom metrics, where does the HPA typically retrieve these metrics from?","options":{"A":"Directly from the kubelet on each node.","B":"From the Kubernetes Metrics Server (focused on resource metrics).","C":"From monitoring systems like Prometheus via the custom metrics API (k8s-prometheus-adapter).","D":"By parsing application log files stored in etcd.","E":"From annotations manually added to the Deployment manifest."},"answer":"C"},{"id":220,"section":"Cloud Native Architecture","num":17,"text":"What does \u201devent-driven\u201d architecture, often associated with serverless functions, mean?","options":{"A":"Applications must be written using event sourcing patterns.","B":"Code execution is triggered by the occurrence of specific events (e.g., HTTP request, message).","C":"The platform uses events internally for scheduling, hidden from the user. 69","D":"All application state must be stored within the event payload.","E":"Only asynchronous communication patterns can be used."},"answer":"B"},{"id":221,"section":"Cloud Native Architecture","num":18,"text":"How does the CNCF promote cloud native principles and best practices within the community?","options":{"A":"By mandating the use of specific programming languages for hosted projects.","B":"By selling proprietary tools that enforce best practices.","C":"Through publications (e.g., blog, reports), webinars, events (like KubeCon), and fostering collaboration.","D":"By directly managing the infrastructure for all member companies.","E":"By providing legally binding architectural blueprints."},"answer":"C"},{"id":222,"section":"Cloud Native Architecture","num":19,"text":"A Site Reliability Engineer (SRE) working with a Kubernetes platform would likely focus most on which area?","options":{"A":"Designing the user interface for end-user applications.","B":"Automating platform operations, ensuring reliability/SLOs, and managing incident response.","C":"Writing feature code for the core business applications running on the platform.","D":"Defining the marketing strategy for the company\u2019s cloud native services.","E":"Choosing which programming language application developers should use."},"answer":"B"},{"id":223,"section":"Cloud Native Architecture","num":20,"text":"Why is the standardization provided by specifications like CRI (Container Runtime Interface) important for Platform Operators/SREs?","options":{"A":"It allows them to use docker build commands to manage runtime configuration.","B":"It simplifies the process of writing application code for developers.","C":"It gives them flexibility to choose/swap runtimes without disrupting Kubernetes functionality.","D":"It guarantees that all container runtimes will have identical performance.","E":"It eliminates the need for managing worker nodes. 70"},"answer":"C"},{"id":224,"section":"Cloud Native Architecture","num":21,"text":"If you need to automatically scale your Kubernetes cluster by adding/removing nodes based on overall resource pressure, which component is responsible?","options":{"A":"Horizontal Pod Autoscaler (HPA)","B":"Vertical Pod Autoscaler (VPA)","C":"Cluster Autoscaler (CA)","D":"kube-scheduler","E":"metrics-server"},"answer":"C"},{"id":225,"section":"Cloud Native Architecture","num":22,"text":"Which statement best describes the concept of \u201dscale to zero\u201d in serverless platforms?","options":{"A":"The platform uses zero resources when no functions are deployed.","B":"Application instances are automatically removed when idle, consuming no resources.","C":"Functions are limited to executing for zero seconds (instantaneous execution).","D":"The platform requires zero configuration from the developer to deploy functions.","E":"Only zero-cost open source serverless platforms support this feature."},"answer":"B"},{"id":226,"section":"Cloud Native Architecture","num":23,"text":"What is the significance of the CNCF Landscape (landscape.cncf.io)?","options":{"A":"It\u2019s the o\ufb00icial source code repository for all CNCF projects.","B":"It\u2019s a legally binding contract defining how member companies must use CNCF software.","C":"It provides an interactive map categorizing and organizing projects within the cloud native ecosystem.","D":"It\u2019s the primary tool used for deploying applications to Kubernetes clusters.","E":"It\u2019s a real-time dashboard showing the operational status of CNCF projects."},"answer":"C"},{"id":227,"section":"Cloud Native Architecture","num":24,"text":"Consider the interaction between Application Developers and Platform Operators. What is a key aspect of their relationship in a healthy cloud native culture? 71","options":{"A":"Operators dictate the exact programming languages developers must use.","B":"Developers have unrestricted root access to all cluster nodes for debugging.","C":"Clear interfaces and responsibilities, with Operators providing a reliable platform for Developers.","D":"Developers are solely responsible for patching the Kubernetes control plane.","E":"Operators manually review every line of application code before deployment."},"answer":"C"},{"id":228,"section":"Cloud Native Architecture","num":25,"text":"The existence of multiple CNI (Container Network Interface) plugins (e.g., Calico, Flannel, Cilium) demonstrates what benefit of open standards?","options":{"A":"That CNI guarantees identical features across all network plugins.","B":"That network configuration in Kubernetes is overly complex.","C":"That standardization allows for choice and innovation in specific implementation areas.","D":"That CNI plugins are only developed by the CNCF itself.","E":"That network plugins are the least stable part of Kubernetes."},"answer":"C"},{"id":229,"section":"Cloud Native Architecture","num":26,"text":"You have a stateless web application deployed using a Kubernetes Deployment. Tra\ufb00ic fluctuates significantly. You want to automatically adjust the number of Pods based on average CPU utilization. Which tool is most appropriate?","options":{"A":"Cluster Autoscaler (CA)","B":"Vertical Pod Autoscaler (VPA)","C":"Horizontal Pod Autoscaler (HPA) configured with a CPU utilization target.","D":"Manually adjusting the replicas field in the Deployment manifest.","E":"Using a DaemonSet instead of a Deployment."},"answer":"C"},{"id":230,"section":"Cloud Native Architecture","num":27,"text":"Which is NOT a typical characteristic often associated with serverless architectures (especially FaaS)?","options":{"A":"Stateless function execution (state managed externally).","B":"Short-lived execution durations for functions. 72","C":"Built-in requirement for managing complex state within the function instance itself.","D":"Event-driven triggers (e.g., HTTP, queues, storage events).","E":"Automatic scaling based on demand (including scale-to-zero)."},"answer":"C"},{"id":231,"section":"Cloud Native Architecture","num":28,"text":"How does CNCF governance typically handle decision-making for technical directions within its hosted projects?","options":{"A":"Decisions are made solely by the original creators of the project.","B":"Decisions are dictated by the CNCF governing board based on member votes.","C":"Through community consensus, meritocracy, and processes defined by project-specific governance (e.g., SIGs, maintainers).","D":"Based on the highest bidder among commercial vendors supporting the project.","E":"Following directives from the Linux Foundation technical board."},"answer":"C"},{"id":232,"section":"Cloud Native Architecture","num":30,"text":"What problem does the Service Mesh Interface (SMI) specification aim to address?","options":{"A":"The lack of service mesh options available for Kubernetes.","B":"The di\ufb00iculty in installing service mesh control planes.","C":"The need for a standard interface for interacting with different service meshes on Kubernetes.","D":"The inability of service meshes to handle non-HTTP tra\ufb00ic.","E":"The high performance overhead associated with service mesh sidecars. 73"},"answer":"C"},{"id":233,"section":"Cloud Native Architecture","num":31,"text":"Can Vertical Pod Autoscaler (VPA) and Horizontal Pod Autoscaler (HPA) be safely used together on the same workload for CPU/memory scaling?","options":{"A":"Yes, they work seamlessly together by default.","B":"No, they are fundamentally incompatible and will conflict.","C":"It\u2019s generally discouraged or requires careful configuration, as they can interfere with each other.","D":"Yes, but only if the Cluster Autoscaler is also enabled.","E":"VPA automatically disables HPA when applied to the same workload."},"answer":"C"},{"id":234,"section":"Cloud Native Architecture","num":32,"text":"What is a potential drawback or challenge associated with serverless FaaS architectures compared to traditional long-running services?","options":{"A":"Significantly higher infrastructure costs when constantly busy.","B":"Di\ufb00iculty in achieving automatic scaling.","C":"Lack of support for common programming languages.","D":"Cold starts (latency introduced when invoking an idle function).","E":"Inability to integrate with other cloud services."},"answer":"D"},{"id":235,"section":"Cloud Native Architecture","num":33,"text":"The \u201dDevOps\u201d culture is central to cloud native paradigms. What core principle does DevOps emphasize?","options":{"A":"Complete separation of development and operations teams and responsibilities.","B":"Prioritizing feature development speed over operational stability.","C":"Collaboration, shared responsibility, and automation between development and operations.","D":"Replacing operations teams entirely with automated tools managed by developers.","E":"Focusing solely on infrastructure automation, ignoring application development."},"answer":"C"},{"id":236,"section":"Cloud Native Architecture","num":34,"text":"Who is the primary consumer/beneficiary of a well-maintained internal cloud native platform built by Platform Engineers?","options":{"A":"The CNCF governing board. 74","B":"End users accessing the company\u2019s external website.","C":"Application Development teams building and deploying services.","D":"Competing companies in the same industry.","E":"The company\u2019s finance department managing cloud spend."},"answer":"C"},{"id":237,"section":"Cloud Native Architecture","num":35,"text":"What is the value proposition of having a standardized interface like CSI (Container Storage Interface) for Application Developers?","options":{"A":"They need to learn the specific API of every storage vendor their platform might use.","B":"They can request and consume storage using consistent Kubernetes objects (PVC) regardless of the backend.","C":"They are responsible for writing and maintaining CSI drivers for their applications.","D":"They no longer need to consider storage performance requirements.","E":"They must use hostPath volumes for all persistent data."},"answer":"B"},{"id":238,"section":"Cloud Native Architecture","num":37,"text":"Besides FaaS, what other types of services sometimes fall under the \u201dserverless\u201d umbrella?","options":{"A":"Managed databases, messaging queues, and API gateways that autoscale and abstract infrastructure.","B":"Traditional virtual machines with pay-as-you-go pricing.","C":"Bare-metal servers provisioned via an API.","D":"On-premises Kubernetes clusters managed using GitOps.","E":"Desktop applications deployed via MSI installers. 75"},"answer":"A"},{"id":239,"section":"Cloud Native Architecture","num":38,"text":"What is the purpose of the CNCF Artifact Hub?","options":{"A":"To store source code for all CNCF projects.","B":"To provide a centralized web UI for finding and discovering cloud native packages and artifacts.","C":"To run performance benchmarks on different Kubernetes distributions.","D":"To manage user authentication and authorization for CNCF services.","E":"To host container images for public use."},"answer":"B"},{"id":240,"section":"Cloud Native Architecture","num":39,"text":"Why is understanding the different personas (Developer, Operator, etc.) important when designing a cloud native platform or process?","options":{"A":"It helps determine the pricing model for the platform.","B":"It ensures the platform only uses CNCF Graduated projects.","C":"It allows tailoring tools, interfaces, and automation to meet the specific needs and workflows of each role.","D":"It dictates the programming language used for building the platform itself.","E":"It\u2019s primarily a marketing exercise with little technical impact."},"answer":"C"},{"id":241,"section":"Cloud Native Architecture","num":40,"text":"The OpenTelemetry project, hosted by CNCF, aims to standardize which aspect of cloud native applications?","options":{"A":"Container image formats and runtime execution.","B":"Service mesh configuration and tra\ufb00ic management APIs.","C":"Generation, collection, and export of telemetry data (traces, metrics, logs).","D":"Persistent storage provisioning and volume lifecycle management.","E":"User authentication and authorization protocols."},"answer":"C"},{"id":242,"section":"Cloud Native Architecture","num":41,"text":"Which autoscaling component would be most directly impacted by poorly configured Pod readiness/liveness probes?","options":{"A":"Cluster Autoscaler (CA)","B":"Vertical Pod Autoscaler (VPA) 76","C":"Horizontal Pod Autoscaler (HPA)","D":"Kubernetes Scheduler (kube-scheduler)","E":"metrics-server"},"answer":"C"},{"id":243,"section":"Cloud Native Architecture","num":42,"text":"What key operational burden is significantly reduced by adopting serverless FaaS compared to running the same code in containers on Kubernetes?","options":{"A":"Writing Dockerfiles and building container images.","B":"Managing the underlying compute instances, OS patching, and runtime updates.","C":"Defining Kubernetes Service and Ingress resources.","D":"Implementing application-level logging and monitoring.","E":"Managing source code in a version control system like Git."},"answer":"B"},{"id":244,"section":"Cloud Native Architecture","num":43,"text":"What is the relationship between the Linux Foundation (LF) and the Cloud Native Computing Foundation (CNCF)?","options":{"A":"They are direct competitors offering similar services.","B":"CNCF is the parent organization, and LF is one of its projects.","C":"LF is the parent non-profit foundation, and CNCF is a sub-foundation focused on cloud native.","D":"They are completely unrelated organizations.","E":"CNCF manages Linux kernel development; LF manages cloud native projects."},"answer":"C"},{"id":245,"section":"Cloud Native Architecture","num":44,"text":"From a Platform Operator\u2019s perspective, what is a major benefit of Application Developers adhering to standardized logging formats and exposing Prometheus metrics?","options":{"A":"It reduces the number of programming languages the Operator needs to support.","B":"It simplifies the setup and maintenance of centralized observability and monitoring systems.","C":"It eliminates the need for Kubernetes RBAC policies.","D":"It guarantees that applications will be completely bug-free.","E":"It allows Operators to directly modify application source code."},"answer":"B"},{"id":246,"section":"Cloud Native Architecture","num":46,"text":"If VPA is configured in \u201drecommendation\u201d mode (updateMode: \u201dOff\u201d), what does it do?","options":{"A":"It automatically adjusts Pod resource requests/limits based on usage.","B":"It scales the number of Pod replicas based on its recommendations.","C":"It generates recommendations for resource requests/limits but does not apply them automatically.","D":"It adds or removes cluster nodes based on resource recommendations.","E":"It disables itself and provides no recommendations."},"answer":"C"},{"id":247,"section":"Cloud Native Architecture","num":47,"text":"Knative is a popular open source project often associated with serverless on Kubernetes. What core capabilities does Knative Serving provide?","options":{"A":"Persistent block storage management for functions.","B":"A framework for building complex stateful workflows.","C":"Request-driven compute with autoscaling (including scale-to-zero) for deploying containers.","D":"A distributed database optimized for serverless workloads.","E":"A graphical user interface for managing Kubernetes clusters."},"answer":"C"},{"id":248,"section":"Cloud Native Architecture","num":48,"text":"What is a key characteristic of successful open source governance, as promoted by organizations like the CNCF?","options":{"A":"Centralized control by a single sponsoring company.","B":"Lack of clear processes for contribution or decision-making.","C":"Transparency, community participation, and clear contribution/leadership paths.","D":"Frequent changes in project licensing terms. 78","E":"Closed-door meetings for all technical decisions."},"answer":"C"},{"id":249,"section":"Cloud Native Architecture","num":49,"text":"An End User of a cloud native application interacts with the system differently than a Developer or Operator. What is the End User\u2019s primary interaction?","options":{"A":"Pushing code commits to a Git repository.","B":"Configuring monitoring alerts for application performance.","C":"Using the application\u2019s interface (e.g., web UI, mobile app) to consume its functionality.","D":"Provisioning new nodes for the Kubernetes cluster.","E":"Writing Kubernetes YAML manifests."},"answer":"C"},{"id":250,"section":"Cloud Native Observability","num":1,"text":"Which of the three pillars of observability is best suited for understanding the end-to-end journey of a request as it traverses multiple microservices?","options":{"A":"Metrics","B":"Logs","C":"Traces (Distributed Tracing)","D":"Events","E":"Alerts 79"},"answer":"C"},{"id":251,"section":"Cloud Native Observability","num":2,"text":"What is the primary mechanism by which Prometheus collects metrics data from target applications or services?","options":{"A":"Targets push metrics to the Prometheus server via an agent.","B":"Prometheus queries a central message bus where targets publish metrics.","C":"Prometheus actively scrapes (pulls) metrics from HTTP endpoints exposed by the targets.","D":"Targets write metrics directly to Prometheus\u2019s time-series database (TSDB).","E":"Prometheus uses SNMP traps sent by the targets."},"answer":"C"},{"id":252,"section":"Cloud Native Observability","num":3,"text":"How can Kubernetes resource usage metrics (like CPU and memory consumption per Pod) directly inform cost management efforts?","options":{"A":"By automatically adjusting application code to be more e\ufb00icient.","B":"By providing data to identify over-provisioned resources and potential waste.","C":"By enforcing strict network policies to reduce data transfer costs.","D":"By predicting future cloud provider price changes.","E":"By increasing the number of replicas for cost distribution."},"answer":"B"},{"id":253,"section":"Cloud Native Observability","num":4,"text":"What distinguishes \u201dobservability\u201d from traditional \u201dmonitoring\u201d?","options":{"A":"Monitoring uses dashboards; Observability uses only logs.","B":"Monitoring focuses on predefined metrics (\u201dknown unknowns\u201d); Observability aims to infer system state from outputs (\u201dunknown unknowns\u201d).","C":"Observability is only applicable to serverless architectures; Monitoring is for VMs.","D":"Monitoring relies on pulling metrics; Observability relies on pushing logs.","E":"Observability replaces the need for alerting systems."},"answer":"B"},{"id":254,"section":"Cloud Native Observability","num":5,"text":"What is the role of an \u201dexporter\u201d in the Prometheus ecosystem? 80","options":{"A":"To visualize Prometheus metrics in dashboards (like Grafana).","B":"To push alerts from Prometheus to notification channels (like Slack).","C":"To translate metrics from non-Prometheus native systems into the Prometheus format.","D":"To store long-term Prometheus metrics data in remote storage.","E":"To configure Prometheus scrape targets automatically."},"answer":"C"},{"id":255,"section":"Cloud Native Observability","num":6,"text":"Which Kubernetes feature helps prevent individual workloads or namespaces from consuming excessive cluster resources, thereby aiding cost control?","options":{"A":"NetworkPolicy","B":"ServiceAccount","C":"ResourceQuota","D":"Ingress","E":"PodDisruptionBudget"},"answer":"C"},{"id":256,"section":"Cloud Native Observability","num":8,"text":"In PromQL (Prometheus Query Language), what is the primary purpose of \u201dlabels\u201d?","options":{"A":"To define the alert conditions for firing rules.","B":"To specify the time duration for a query range.","C":"To add dimensions (key-value pairs) to metrics for filtering, aggregation, and grouping.","D":"To configure the scrape interval for specific targets.","E":"To encrypt sensitive information within metric data."},"answer":"C"},{"id":257,"section":"Cloud Native Observability","num":10,"text":"What does \u201dinstrumentation\u201d mean in the context of application observability?","options":{"A":"Automatically installing monitoring agents on application hosts.","B":"Adding code to an application to generate and export telemetry data (logs, metrics, traces).","C":"Configuring firewall rules to allow monitoring tra\ufb00ic.","D":"Visualizing telemetry data in dashboards like Grafana.","E":"Writing PromQL queries to analyze application performance."},"answer":"B"},{"id":258,"section":"Cloud Native Observability","num":11,"text":"What is the function of the Alertmanager component within the Prometheus monitoring stack?","options":{"A":"To scrape metrics from target endpoints.","B":"To store long-term metrics data.","C":"To handle alerts generated by Prometheus, including deduplication, grouping, and routing.","D":"To visualize metrics data in graphical dashboards.","E":"To perform automated remediation actions based on alerts."},"answer":"C"},{"id":259,"section":"Cloud Native Observability","num":12,"text":"How can tracking resource requests vs. actual usage for Pods help optimize Kubernetes cluster costs?","options":{"A":"It allows increasing requests to guarantee performance, regardless of cost.","B":"It helps identify \u201dstranded capacity\u201d where allocated resources (requests) are consistently higher than usage, indicating potential savings. 82","C":"It determines the best CNI plugin to use for reducing network latency.","D":"It automatically selects the cheapest cloud provider region for deployment.","E":"It increases the number of nodes to improve availability."},"answer":"B"},{"id":260,"section":"Cloud Native Observability","num":13,"text":"Which observability pillar would be most useful for answering the question: \u201dWhat was the exact error message generated by service X at 3:15 PM yesterday?\u201d","options":{"A":"Metrics","B":"Traces","C":"Logs","D":"Dashboards","E":"Service Level Objectives (SLOs)"},"answer":"C"},{"id":261,"section":"Cloud Native Observability","num":15,"text":"What is the concept of \u201dshowback\u201d or \u201dchargeback\u201d in cloud cost management, often enabled by observability data?","options":{"A":"Showing users the real-time stock price of the cloud provider.","B":"Charging users based on the number of dashboards they create.","C":"Allocating infrastructure costs back to the specific teams or applications that consumed the resources.","D":"Showing developers feedback on their code quality based on metrics.","E":"Charging a flat fee per namespace regardless of usage."},"answer":"C"},{"id":262,"section":"Cloud Native Observability","num":16,"text":"OpenTelemetry aims to standardize which parts of the observability pipeline? 83","options":{"A":"Only the visualization layer (dashboards).","B":"Only the long-term storage of metrics data.","C":"The generation, collection, and export of telemetry data (APIs, SDKs, protocols).","D":"Only the alerting and notification mechanisms.","E":"The configuration format for Prometheus scrape jobs."},"answer":"C"},{"id":263,"section":"Cloud Native Observability","num":17,"text":"What type of Prometheus metric is most suitable for tracking a value that can arbitrarily increase or decrease, like the current number of active connections?","options":{"A":"Counter","B":"Gauge","C":"Histogram","D":"Summary","E":"Info"},"answer":"B"},{"id":264,"section":"Cloud Native Observability","num":18,"text":"Why is tagging or labeling resources (e.g., Pods, Nodes, cloud resources) crucial for effective cost management in a shared cloudnative environment?","options":{"A":"It improves the performance of the Kubernetes scheduler.","B":"It allows cost allocation and analysis based on specific teams, projects, or environments.","C":"It automatically encrypts data associated with the tagged resources.","D":"It enables the use of Vertical Pod Autoscaler (VPA).","E":"It increases the fault tolerance of the control plane."},"answer":"B"},{"id":265,"section":"Cloud Native Observability","num":19,"text":"Grafana is often used alongside Prometheus. What is Grafana\u2019s primary role in this context?","options":{"A":"To store long-term metrics data collected by Prometheus.","B":"To generate alerts based on Prometheus metrics.","C":"To provide data visualization and dashboarding for Prometheus metrics (and other sources).","D":"To replace the Prometheus server for scraping targets.","E":"To manage Prometheus configuration files. 84"},"answer":"C"},{"id":266,"section":"Cloud Native Observability","num":20,"text":"What does the rate() function in PromQL typically calculate?","options":{"A":"The total count of a metric over a time range.","B":"The average value of a gauge metric over a time range.","C":"The per-second average rate of increase for a counter metric over a time range.","D":"The 95th percentile value of a histogram metric.","E":"The current value of a metric label."},"answer":"C"},{"id":267,"section":"Cloud Native Observability","num":22,"text":"What is a \u201dService Level Objective\u201d (SLO) in the context of observability and SRE?","options":{"A":"A detailed log message indicating a service failure.","B":"A contractual agreement with a cloud provider for uptime (SLA).","C":"A specific, measurable target for a service\u2019s reliability or performance (e.g., 99.9","D":"A dashboard showing real-time resource utilization.","E":"An alert configured in Alertmanager."},"answer":"C"},{"id":268,"section":"Cloud Native Observability","num":23,"text":"What information does a Prometheus Histogram metric provide that a simple Gauge or Counter does not?","options":{"A":"The exact time when the metric last changed value.","B":"The total number of times an event has occurred.","C":"The distribution of observed values across a set of configurable buckets.","D":"The current status (up/down) of the monitored target. 85","E":"The geographic location of the monitored instance."},"answer":"C"},{"id":269,"section":"Cloud Native Observability","num":24,"text":"How might analyzing network egress data, often available via cloud provider monitoring or specialized tools, help control costs?","options":{"A":"By optimizing DNS resolution times within the cluster.","B":"By identifying unexpected or excessive data transfer out of the cluster/cloud, which often incurs costs.","C":"By improving the e\ufb00iciency of the CNI plugin\u2019s IP address allocation.","D":"By reducing the number of LoadBalancer services used.","E":"By increasing the MTU size for Pod network interfaces."},"answer":"B"},{"id":270,"section":"Cloud Native Observability","num":25,"text":"Jaeger and Zipkin are open-source tools commonly used in cloudnative environments. Which observability pillar are they primarily associated with?","options":{"A":"Metrics aggregation and storage.","B":"Log collection and analysis.","C":"Distributed Tracing backend and visualization.","D":"Alerting and notification routing.","E":"Service discovery configuration management."},"answer":"C"},{"id":271,"section":"Cloud Native Observability","num":26,"text":"What is the purpose of the job label automatically added by Prometheus during scraping?","options":{"A":"To identify the specific metric name being scraped.","B":"To indicate the IP address and port of the scraped target.","C":"To group targets belonging to the same scrape configuration (e.g., \u201dkubernetes-pods\u201d).","D":"To specify the data center location of the Prometheus server.","E":"To store the timestamp of the last successful scrape."},"answer":"C"},{"id":272,"section":"Cloud Native Observability","num":27,"text":"Which Kubernetes object can set default resource requests and limits for containers within a namespace if not specified in the Pod spec, indirectly aiding cost predictability?","options":{"A":"ConfigMap","B":"Secret 86","C":"LimitRange","D":"HorizontalPodAutoscaler","E":"MutatingWebhookConfiguration"},"answer":"C"},{"id":273,"section":"Cloud Native Observability","num":28,"text":"What is meant by \u201dcardinality\u201d in the context of Prometheus metrics and labels?","options":{"A":"The number of different metric names exposed by a target.","B":"The total number of targets being scraped by Prometheus.","C":"The number of unique time series generated by a metric name and its distinct label combinations.","D":"The frequency at which Prometheus scrapes a specific target.","E":"The storage duration configured for metrics data."},"answer":"C"},{"id":274,"section":"Cloud Native Observability","num":29,"text":"What is the difference between the up metric automatically generated by Prometheus and application-specific health check metrics?","options":{"A":"up is a gauge, while health checks are counters.","B":"up indicates scrape success; health checks indicate application functionality.","C":"up is only generated for Kubernetes Pods; health checks are for external services.","D":"up requires custom instrumentation; health checks are built-in.","E":"up triggers Alertmanager directly; health checks require PromQL rules."},"answer":"B"},{"id":275,"section":"Cloud Native Observability","num":30,"text":"Tools like Kubecost or OpenCost integrate with Kubernetes and cloud providers primarily to achieve what?","options":{"A":"To automatically optimize application code for better performance.","B":"To provide detailed cost allocation, monitoring, and optimization insights specific to Kubernetes workloads.","C":"To replace the need for Prometheus and Grafana entirely.","D":"To manage user authentication and RBAC policies within the cluster.","E":"To deploy and manage CNI network plugins."},"answer":"B"},{"id":276,"section":"Cloud Native Observability","num":32,"text":"How does Prometheus\u2019s remote_write feature contribute to observability?","options":{"A":"It allows Prometheus to scrape targets located in remote data centers.","B":"It enables Prometheus to send alerts directly to remote notification systems.","C":"It allows Prometheus to forward ingested metrics to long-term storage or other analysis systems.","D":"It lets users remotely query Prometheus metrics via an API.","E":"It configures remote Grafana instances automatically."},"answer":"C"},{"id":277,"section":"Cloud Native Observability","num":33,"text":"Allocating costs based on Namespace in Kubernetes is a common strategy. What is a prerequisite for this approach to be effective?","options":{"A":"All Pods must run with hostNetwork: true.","B":"Resources (Pods, PVCs, Services) must be consistently deployed into appropriate team/application-specific Namespaces.","C":"The cluster must use the Cluster Autoscaler.","D":"All applications must be instrumented with OpenTelemetry.","E":"Only LoadBalancer services should be used for external access."},"answer":"B"},{"id":278,"section":"Cloud Native Observability","num":34,"text":"What is the primary goal of correlating different observability signals (e.g., linking a trace ID in logs to a specific distributed trace)?","options":{"A":"To reduce the storage cost of telemetry data.","B":"To allow visualization of metrics in Grafana.","C":"To provide a more complete context for troubleshooting by connecting related events across signals. 88","D":"To replace the need for manual code instrumentation.","E":"To standardize the format of log messages."},"answer":"C"},{"id":279,"section":"Cloud Native Observability","num":35,"text":"What does the Prometheus Query Language (PromQL) primarily operate on?","options":{"A":"Raw log files stored on disk.","B":"Relational database tables containing event data.","C":"Time series data identified by metric names and key-value labels.","D":"Distributed trace spans stored in Jaeger or Zipkin.","E":"Kubernetes API object definitions (YAML)."},"answer":"C"},{"id":280,"section":"Cloud Native Observability","num":36,"text":"When evaluating cloud costs, what is a key difference between \u201dreserved instances\u201d (RIs) or \u201dsavings plans\u201d and \u201don-demand\u201d pricing?","options":{"A":"On-demand instances offer better performance than RIs.","B":"RIs provide significant discounts in exchange for a commitment to usage (e.g., 1 or 3 years).","C":"On-demand pricing is only available for serverless functions.","D":"RIs can only be used for Kubernetes control plane nodes.","E":"On-demand instances have guaranteed availability; RIs do not."},"answer":"B"},{"id":281,"section":"Cloud Native Observability","num":37,"text":"Which statement accurately describes structured logging?","options":{"A":"Writing logs only in binary format for performance.","B":"Writing log entries as plain text strings with embedded timestamps.","C":"Writing logs in a consistent, machine-readable format (e.g., JSON) with key-value pairs.","D":"Only logging metrics data instead of event descriptions.","E":"Encrypting all log messages before writing them to disk."},"answer":"C"},{"id":282,"section":"Cloud Native Observability","num":38,"text":"What problem does the Prometheus scrape_timeout configuration setting address?","options":{"A":"It limits how long Prometheus waits for Alertmanager to respond.","B":"It defines the maximum duration Prometheus will wait for a target to respond during a scrape. 89","C":"It sets the retention period for metrics data in the TSDB.","D":"It controls how often Prometheus reloads its configuration file.","E":"It limits the number of concurrent scrapes Prometheus can perform."},"answer":"B"},{"id":283,"section":"Cloud Native Observability","num":39,"text":"How can FinOps principles, which emphasize cloud financial accountability, be applied within a Kubernetes environment?","options":{"A":"By giving developers unrestricted access to create cloud resources.","B":"By focusing solely on reducing performance to minimize costs.","C":"By integrating cost visibility (via observability) into engineering workflows and decision-making.","D":"By manually approving every deployment to the cluster.","E":"By using only open source software to avoid licensing fees."},"answer":"C"},{"id":284,"section":"Cloud Native Observability","num":40,"text":"What is a key challenge when collecting traces in high-throughput systems?","options":{"A":"Traces do not support capturing latency information.","B":"Generating and storing trace data for every request can be resourceintensive and costly.","C":"Traces cannot be correlated with logs or metrics.","D":"Trace data cannot be visualized effectively.","E":"Only specific programming languages support trace instrumentation."},"answer":"B"},{"id":285,"section":"Cloud Native Observability","num":41,"text":"If you see rapidly increasing cardinality for a specific Prometheus metric, what is a likely cause related to labels?","options":{"A":"The scrape interval for the metric\u2019s job is too short.","B":"The metric name itself is changing frequently.","C":"A label value associated with the metric is highly dynamic and unique per instance/request (e.g., user ID, Pod ID, timestamp).","D":"The Alertmanager configuration is incorrect.","E":"The remote_write endpoint is unavailable."},"answer":"C"},{"id":286,"section":"Cloud Native Observability","num":43,"text":"What is the role of time-series data (metrics) in proactive observability?","options":{"A":"Primarily useful only for debugging specific past incidents.","B":"Used to establish baselines, detect anomalies, and predict future trends or potential issues.","C":"Only valuable when combined with distributed tracing data.","D":"Cannot be used effectively for real-time alerting.","E":"Replaced entirely by structured logging in modern systems."},"answer":"B"},{"id":287,"section":"Cloud Native Observability","num":44,"text":"When configuring Prometheus alerting rules, what is the purpose of the for clause?","options":{"A":"To specify the receiver for the alert (e.g., Slack channel).","B":"To define the duration an alert condition must be true before the alert becomes firing.","C":"To set the severity label for the alert (e.g., critical, warning).","D":"To group multiple related alert conditions into a single rule.","E":"To add annotations with contextual information to the alert."},"answer":"B"},{"id":288,"section":"Cloud Native Observability","num":45,"text":"What does \u201dright-sizing\u201d mean in the context of Kubernetes resource requests/limits and cost management?","options":{"A":"Always setting requests and limits to the maximum allowed values.","B":"Setting requests and limits based on observed application usage patterns to avoid waste.","C":"Using only the largest available node types in the cluster.","D":"Disabling resource limits entirely for better performance.","E":"Matching resource requests exactly to the node\u2019s capacity."},"answer":"B"},{"id":289,"section":"Cloud Native Observability","num":47,"text":"Besides the basic up metric, what is another common metric exposed by Prometheus exporters to indicate their own health or ability to collect data?","options":{"A":"exporter_scrape_duration_seconds or similar metrics about the scrape itself.","B":"node_cpu_seconds_total exposed by node_exporter.","C":"kube_pod_info exposed by kube-state-metrics.","D":"http_requests_total from an application.","E":"etcd_server_has_leader from etcd."},"answer":"A"},{"id":290,"section":"Cloud Native Observability","num":48,"text":"How can cloud provider cost explorers or billing dashboards be used in conjunction with Kubernetes observability tools?","options":{"A":"To replace the need for Prometheus monitoring within the cluster.","B":"To get a high-level view of overall spend, which can then be correlated with granular usage data from Kubernetes tools.","C":"To configure Kubernetes NetworkPolicies automatically based on cost.","D":"To directly adjust Pod resource requests based on billing alerts.","E":"To provide distributed tracing across cloud services."},"answer":"B"},{"id":291,"section":"Cloud Native Observability","num":50,"text":"When Prometheus fails to scrape a target (e.g., due to network issues or the target being down), what value will the up metric for that target typically have?","options":{"A":"1","B":"-1","C":"0","D":"NaN (Not a Number)","E":"The metric will be absent (no data point recorded)."},"answer":"C"},{"id":292,"section":"Cloud Native Application Delive","num":1,"text":"What core principle of cloud-native application delivery emphasizes treating infrastructure components and application deployments as disposable units replaced on update?","options":{"A":"Statefulness","B":"Mutability","C":"Immutability","D":"Manual Configuration","E":"High Cohesion"},"answer":"C"},{"id":293,"section":"Cloud Native Application Delive","num":2,"text":"In GitOps, what serves as the single source of truth for the desired state of the application and infrastructure?","options":{"A":"The running cluster state queried via kubectl.","B":"A configuration management database (CMDB).","C":"A Git repository containing declarative configuration manifests.","D":"A wiki page maintained by the operations team.","E":"The CI/CD pipeline logs."},"answer":"C"},{"id":294,"section":"Cloud Native Application Delive","num":3,"text":"What is the primary goal of Continuous Integration (CI) in a CI/CD pipeline?","options":{"A":"To automatically deploy every code change directly to production. 93","B":"To frequently merge code changes into a central repository and automatically build and test the application.","C":"To manage the Git repository permissions for developers.","D":"To provision the underlying infrastructure required for deployment.","E":"To manually review code quality before merging."},"answer":"B"},{"id":295,"section":"Cloud Native Application Delive","num":4,"text":"How does the declarative nature of Kubernetes manifests support cloud-native application delivery principles?","options":{"A":"By requiring developers to specify exact imperative commands for deployment.","B":"By allowing users to define the desired state, leaving the how to the orchestrator\u2019s control loop.","C":"By enforcing the use of specific programming languages for applications.","D":"By automatically generating Git repositories for each application.","E":"By integrating directly with billing systems for cost management."},"answer":"B"},{"id":296,"section":"Cloud Native Application Delive","num":5,"text":"What is the role of a GitOps agent or operator (like Argo CD or Flux) running within the Kubernetes cluster?","options":{"A":"To build container images from source code committed to Git.","B":"To run automated tests against application code in Git.","C":"To continuously monitor the Git repository and reconcile the cluster state to match the desired state in Git.","D":"To provide a web UI for developers to manually apply manifests to the cluster.","E":"To manage user access control to the Git repository."},"answer":"C"},{"id":297,"section":"Cloud Native Application Delive","num":6,"text":"What distinguishes Continuous Delivery from Continuous Deployment within a CI/CD pipeline?","options":{"A":"Continuous Delivery involves manual testing; Continuous Deployment is fully automated.","B":"Continuous Delivery deploys to production automatically; Continuous Deployment requires manual approval.","C":"Continuous Delivery ensures code is always deployable; Continuous Deployment automatically deploys it. 94","D":"Continuous Delivery focuses on infrastructure; Continuous Deployment focuses on application code.","E":"Continuous Delivery uses Git; Continuous Deployment uses SVN."},"answer":"C"},{"id":298,"section":"Cloud Native Application Delive","num":7,"text":"Why is a feedback loop important in cloud-native application delivery?","options":{"A":"It eliminates the need for version control systems like Git.","B":"It ensures that only senior developers can deploy applications.","C":"It provides visibility into the deployment process and application health, enabling quick response to issues.","D":"It mandates the use of specific cloud providers for hosting.","E":"It replaces the need for automated testing."},"answer":"C"},{"id":299,"section":"Cloud Native Application Delive","num":8,"text":"In the \u201dpull-based\u201d GitOps model, where does the initiative for updating the cluster state originate?","options":{"A":"The CI server pushes changes directly to the Kubernetes API server.","B":"The developer manually runs kubectl apply from their workstation.","C":"The GitOps operator running inside the cluster pulls changes from the Git repository.","D":"An external webhook triggers the update based on Git commits.","E":"The Git repository pushes changes directly to the cluster nodes."},"answer":"C"},{"id":300,"section":"Cloud Native Application Delive","num":9,"text":"What is the primary function of a container registry (e.g., Docker Hub, Google Container Registry, Harbor) in the CI/CD process?","options":{"A":"To store source code repositories.","B":"To run automated unit and integration tests.","C":"To store and distribute container images built by the CI process.","D":"To host Kubernetes manifest files declaratively defining deployments.","E":"To manage DNS records for deployed applications."},"answer":"C"},{"id":301,"section":"Cloud Native Application Delive","num":10,"text":"What cloud-native delivery concept involves gradually shifting tra\ufb00ic from an old version of an application to a new version while monitoring performance? 95","options":{"A":"Blue/Green Deployment","B":"Rolling Update","C":"Canary Release","D":"A/B Testing","E":"Recreate Deployment"},"answer":"C"},{"id":302,"section":"Cloud Native Application Delive","num":11,"text":"What benefit does GitOps provide regarding auditability and rollback?","options":{"A":"It eliminates the need for logging application events.","B":"It relies on manual documentation stored outside Git for tracking changes.","C":"Every change to the desired state is a Git commit, providing a full audit trail and easy rollback via git revert.","D":"Rollbacks must be performed by directly modifying the live cluster state.","E":"Audit trails are only available through proprietary third-party tools."},"answer":"C"},{"id":303,"section":"Cloud Native Application Delive","num":12,"text":"In a typical Kubernetes CI/CD pipeline, what stage usually occurs immediately after building the container image?","options":{"A":"Deploying the image to the production Kubernetes cluster.","B":"Pushing the container image to a container registry.","C":"Running end-to-end tests requiring a fully deployed environment.","D":"Manually approving the release for deployment.","E":"Configuring DNS records for the new application version."},"answer":"B"},{"id":304,"section":"Cloud Native Application Delive","num":13,"text":"Which deployment strategy involves running two identical production environments, only one of which receives live tra\ufb00ic at any time?","options":{"A":"Canary Release","B":"Rolling Update","C":"Blue/Green Deployment","D":"Shadow Deployment","E":"Recreate Deployment"},"answer":"C"},{"id":305,"section":"Cloud Native Application Delive","num":15,"text":"What role does automated testing (unit, integration, end-toend) play in achieving reliable Continuous Delivery/Deployment?","options":{"A":"It slows down the delivery pipeline unnecessarily.","B":"It provides the confidence needed to automate deployments by verifying application correctness at different levels.","C":"It is only necessary for applications written in specific languages.","D":"It replaces the need for monitoring and observability post-deployment.","E":"It primarily focuses on testing the underlying Kubernetes infrastructure."},"answer":"B"},{"id":306,"section":"Cloud Native Application Delive","num":16,"text":"Which practice aligns best with the principle of using declarative specifications for application delivery?","options":{"A":"Writing shell scripts that execute a series of kubectl commands to deploy.","B":"Using Kubernetes manifests (YAML) stored in Git to define the desired application state.","C":"Manually configuring applications through a graphical user interface after deployment.","D":"Storing application configuration directly within container images.","E":"Using SSH to log into nodes and manually start application processes."},"answer":"B"},{"id":307,"section":"Cloud Native Application Delive","num":17,"text":"What is a potential challenge or consideration when implementing GitOps?","options":{"A":"It makes rollbacks significantly more di\ufb00icult than traditional methods.","B":"It requires developers to have direct kubectl apply access to production clusters. 97","C":"Managing secrets securely within a Git-based workflow requires careful handling (e.g., using sealed secrets, external secret managers).","D":"It eliminates the need for any CI pipeline processes like building and testing.","E":"It only works with specific proprietary Git hosting providers."},"answer":"C"},{"id":308,"section":"Cloud Native Application Delive","num":18,"text":"What is \u201dpipeline-as-code\u201d in the context of CI/CD?","options":{"A":"Writing application code directly within the CI/CD tool\u2019s UI.","B":"Defining the CI/CD pipeline\u2019s stages, steps, and configuration using code stored in version control (e.g., Jenkinsfile, GitLab CI YAML).","C":"Generating pipeline definitions automatically based on monitoring data.","D":"A specific programming language used exclusively for writing CI/CD pipelines.","E":"Storing pipeline execution logs as application code."},"answer":"B"},{"id":309,"section":"Cloud Native Application Delive","num":19,"text":"How does the concept of \u201dleast privilege\u201d apply to GitOps operators?","options":{"A":"The operator should run with cluster-admin privileges for maximum flexibility.","B":"The operator\u2019s permissions (e.g., via ServiceAccount and RBAC) should be scoped only to the resources it needs to manage.","C":"Developers interacting with Git should have least privilege; the operator needs full access.","D":"The operator should only have read-only access to the Git repository.","E":"Least privilege only applies to CI/CD tools, not GitOps operators."},"answer":"B"},{"id":310,"section":"Cloud Native Application Delive","num":21,"text":"In a GitOps workflow, how are changes typically promoted across different environments (e.g., staging to production)?","options":{"A":"By directly modifying the live production cluster using kubectl.","B":"By manually copying manifests from a staging directory to a production directory on a local machine.","C":"By merging or promoting changes between branches or directories in the Git repository that represent different environments.","D":"By re-running the entire CI pipeline with a \u201dproduction\u201d flag.","E":"By configuring the GitOps operator to ignore environment differences."},"answer":"C"},{"id":311,"section":"Cloud Native Application Delive","num":22,"text":"What is the significance of using unique, immutable tags (e.g., Git SHA, semantic version) for container images in a CI/CD pipeline?","options":{"A":"It allows developers to overwrite existing tags like latest for simplicity.","B":"It makes it di\ufb00icult to track which version of the code is running in production.","C":"It ensures that deployments are predictable and repeatable, always pulling the exact intended version of the image.","D":"It reduces the storage space required in the container registry.","E":"It is primarily for aesthetic purposes in dashboard displays."},"answer":"C"},{"id":312,"section":"Cloud Native Application Delive","num":23,"text":"What is a key benefit of automating application delivery pipelines?","options":{"A":"It increases the need for manual intervention and approvals at each stage.","B":"It introduces more opportunities for human error during deployment.","C":"It leads to faster, more reliable, and consistent deployments, enabling quicker feedback loops.","D":"It makes the deployment process less transparent and harder to audit.","E":"It primarily benefits only very small development teams."},"answer":"C"},{"id":313,"section":"Cloud Native Application Delive","num":24,"text":"If a discrepancy exists between the state defined in Git and the live cluster state, what is the expected behavior of a GitOps reconciliation loop? 99","options":{"A":"It sends an alert to the developer asking them to manually fix the cluster.","B":"It automatically updates the Git repository to match the cluster state.","C":"It detects the drift and takes action to modify the cluster state to match the desired state in Git.","D":"It halts all further deployments until the discrepancy is manually resolved.","E":"It ignores the discrepancy unless explicitly told to sync."},"answer":"C"},{"id":314,"section":"Cloud Native Application Delive","num":25,"text":"What security practice should be integrated into a CI pipeline dealing with container images?","options":{"A":"Disabling all network access for the CI runner.","B":"Storing plain-text API keys directly in the pipeline script.","C":"Scanning container images for known vulnerabilities (CVEs) using tools like Trivy, Clair, or Snyk.","D":"Granting the CI runner root privileges on the build host.","E":"Bypassing all automated tests to speed up the build process."},"answer":"C"},{"id":315,"section":"Cloud Native Application Delive","num":26,"text":"Which component is typically NOT considered part of a core GitOps workflow?","options":{"A":"A Git repository containing declarative manifests.","B":"An automated mechanism to apply changes from Git to the cluster (Operator).","C":"A mechanism to observe the cluster state and compare it with Git (Operator).","D":"An imperative script run manually by developers to deploy applications.","E":"A feedback mechanism reporting synchronization status."},"answer":"D"},{"id":316,"section":"Cloud Native Application Delive","num":27,"text":"In CI/CD for Kubernetes, why is it often better to update the image tag in a deployment manifest rather than using the latest tag?","options":{"A":"Using latest triggers automatic rollbacks on failure.","B":"The latest tag provides better caching performance in the container registry. 100","C":"Updating a specific tag declaratively triggers a controlled rollout; latest doesn\u2019t reliably signal updates.","D":"The latest tag is not supported by most container registries.","E":"Using specific tags requires less storage space in Git."},"answer":"C"},{"id":317,"section":"Cloud Native Application Delive","num":28,"text":"What does \u201dShift Left\u201d mean in the context of security in application delivery?","options":{"A":"Moving securi"},"answer":"B"}];
+
+const SHORT = {
+  'All Sections 1':'All §1','All Sections 2':'All §2',
+  'Kubernetes Fundamentals':'K8s Fund.',
+  'Container Orchestration':'Cont. Orch.',
+  'Cloud Native Architecture':'CN Arch.',
+  'Cloud Native Observability':'CN Obs.',
+  'Cloud Native Application Delive':'CN App Del.'
+};
+
+const SECS = [...new Set(QS.map(q=>q.section))];
+
+let examQs=[], idx=0, answers={}, mode='practice', selSecs=new Set(SECS), qty=20;
+let timerSec=0, timerInt=null, rvFilter='all';
+
+function initHome(){
+  const g=document.getElementById('sec-grid'); g.innerHTML='';
+  selSecs=new Set(SECS);
+  SECS.forEach(s=>{
+    const cnt=QS.filter(q=>q.section===s).length;
+    const b=document.createElement('button');
+    b.className='sec-btn on'; b.dataset.s=s;
+    b.innerHTML=`<span>${SHORT[s]||s}</span><span class="cnt">${cnt}</span>`;
+    b.onclick=()=>togSec(s,b); g.appendChild(b);
+  });
+  updQty();
+}
+
+function togSec(s,b){
+  if(selSecs.has(s)){if(selSecs.size===1)return; selSecs.delete(s); b.classList.remove('on');}
+  else{selSecs.add(s); b.classList.add('on');}
+  updQty();
+}
+
+function selMode(m){
+  mode=m;
+  document.querySelectorAll('.mode-card').forEach(c=>c.classList.toggle('on',c.dataset.mode===m));
+}
+
+function chQty(d){
+  const pool=QS.filter(q=>selSecs.has(q.section)).length;
+  qty=Math.min(pool,Math.max(5,qty+d));
+  document.getElementById('qty-num').textContent=qty;
+}
+
+function updQty(){
+  const pool=QS.filter(q=>selSecs.has(q.section)).length;
+  qty=Math.min(pool,qty);
+  document.getElementById('qty-num').textContent=qty;
+}
+
+function shuf(a){
+  const b=[...a];
+  for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}
+  return b;
+}
+
+function startExam(){
+  const pool=QS.filter(q=>selSecs.has(q.section));
+  examQs=shuf(pool).slice(0,qty);
+  idx=0; answers={};
+  clearInterval(timerInt); timerSec=0;
+  if(mode==='exam') timerInt=setInterval(()=>{timerSec++;updTimer();},1000);
+  show('exam'); renderQ();
+}
+
+function updTimer(){
+  const el=document.getElementById('timer');
+  if(mode!=='exam'){el.textContent='';return;}
+  const m=String(Math.floor(timerSec/60)).padStart(2,'0');
+  const s=String(timerSec%60).padStart(2,'0');
+  el.textContent=`${m}:${s}`;
+  el.className='timer'+(timerSec>timerSec*0.8?' warn':'');
+}
+
+function renderQ(){
+  const q=examQs[idx], tot=examQs.length;
+  document.getElementById('prog-fill').style.width=`${((idx+1)/tot)*100}%`;
+  document.getElementById('q-cur').textContent=idx+1;
+  document.getElementById('q-tot').textContent=tot;
+  document.getElementById('q-num-tag').textContent=`Q${idx+1}`;
+  document.getElementById('q-sec-tag').textContent=SHORT[q.section]||q.section;
+  document.getElementById('q-text').textContent=q.text;
+
+  const ua=answers[idx], done=ua!==undefined;
+  const ol=document.getElementById('opts'); ol.innerHTML='';
+
+  Object.entries(q.options).forEach(([k,v])=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    let cls='';
+    if(done){
+      b.disabled=true;
+      if(mode==='practice'){
+        if(k===q.answer) cls='correct';
+        else if(k===ua&&ua!==q.answer) cls='wrong';
+      } else {
+        if(k===ua) cls='picked';
+      }
+    } else if(k===ua) cls='picked';
+    if(cls) b.classList.add(cls);
+    b.innerHTML=`<span class="opt-key">${k}</span><span>${v}</span>`;
+    b.onclick=()=>pick(k);
+    ol.appendChild(b);
+  });
+
+  const fb=document.getElementById('feedback');
+  fb.className='feedback';
+  if(done&&mode==='practice'){
+    const ok=ua===q.answer;
+    fb.className='feedback '+(ok?'ok':'bad');
+    fb.textContent=ok?'✓ Correct!':'✗ Wrong — correct answer is '+q.answer;
+  }
+
+  document.getElementById('prev-btn').disabled=idx===0;
+  document.getElementById('next-btn').textContent=idx===tot-1?'Finish':'Next →';
+}
+
+function pick(k){
+  if(answers[idx]!==undefined)return;
+  answers[idx]=k; renderQ();
+}
+
+function nav(d){
+  if(d===1&&idx===examQs.length-1){clearInterval(timerInt);show('results');renderResults();return;}
+  idx=Math.max(0,Math.min(examQs.length-1,idx+d)); renderQ();
+}
+
+function renderResults(){
+  let c=0,w=0,sk=0;
+  examQs.forEach((q,i)=>{
+    const a=answers[i];
+    if(a===undefined)sk++;
+    else if(a===q.answer)c++;
+    else w++;
+  });
+  const tot=examQs.length;
+  const pct=tot>0?Math.round((c/tot)*100):0;
+  const pass=pct>=75;
+
+  document.getElementById('score-pct').textContent=pct+'%';
+  document.getElementById('score-ring').style.setProperty('--pct',pct+'%');
+  const pill=document.getElementById('pass-pill');
+  pill.textContent=pass?'PASS':'FAIL';
+  pill.className='pass-pill '+(pass?'pass':'fail');
+  document.getElementById('r-c').textContent=c;
+  document.getElementById('r-w').textContent=w;
+  document.getElementById('r-s').textContent=sk;
+  document.getElementById('r-t').textContent=tot;
+
+  const bk=document.getElementById('bk-rows'); bk.innerHTML='';
+  const sm={};
+  examQs.forEach((q,i)=>{
+    if(!sm[q.section])sm[q.section]={c:0,t:0};
+    sm[q.section].t++;
+    if(answers[i]===q.answer)sm[q.section].c++;
+  });
+  Object.entries(sm).forEach(([s,d])=>{
+    const p=d.t?Math.round((d.c/d.t)*100):0;
+    const col=p>=75?'var(--success)':p>=50?'var(--warning)':'var(--danger)';
+    const row=document.createElement('div');
+    row.className='bk-row';
+    row.innerHTML=`<div class="bk-name">${SHORT[s]||s}</div><div class="bk-bar"><div class="bk-fill" style="width:${p}%;background:${col}"></div></div><div class="bk-score" style="color:${col}">${d.c}/${d.t}</div>`;
+    bk.appendChild(row);
+  });
+}
+
+function goReview(f){rvFilter=f;renderReview();show('review');}
+
+function setFilter(f){
+  rvFilter=f;
+  document.querySelectorAll('.ftab').forEach(t=>{
+    t.className='ftab'+(t.dataset.f===f?' on':'');
+  });
+  renderReview();
+}
+
+function renderReview(){
+  const body=document.getElementById('rv-body'); body.innerHTML='';
+  let items=examQs.map((q,i)=>({q,i,ua:answers[i]}));
+  if(rvFilter==='wrong') items=items.filter(({q,ua})=>ua===undefined||ua!==q.answer);
+  else if(rvFilter==='correct') items=items.filter(({q,ua})=>ua===q.answer);
+
+  document.getElementById('rv-ttl').textContent=
+    rvFilter==='wrong'?'Wrong Answers':rvFilter==='correct'?'Correct Answers':'Review All';
+
+  items.forEach(({q,i,ua})=>{
+    const ok=ua===q.answer;
+    const card=document.createElement('div');
+    card.className=`rv-card ${ok?'rv-ok':'rv-bad'}`;
+    const opts=Object.entries(q.options).map(([k,v])=>{
+      let cls='';
+      if(k===q.answer)cls='rv-correct';
+      else if(k===ua&&ua!==q.answer)cls='rv-wrong-pick';
+      return `<div class="rv-opt ${cls}"><span class="rv-okey">${k}</span><span>${v}</span></div>`;
+    }).join('');
+    card.innerHTML=`
+      <div class="rv-hd"><div class="rv-dot"></div><div class="rv-qn">Q${i+1} · ${SHORT[q.section]||q.section}${ua===undefined?' · SKIPPED':''}</div></div>
+      <div class="rv-qtext">${q.text}</div>
+      <div class="rv-opts">${opts}</div>`;
+    body.appendChild(card);
+  });
+
+  if(!items.length) body.innerHTML='<div style="text-align:center;padding:3rem;color:var(--muted);font-family:Montserrat,sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Nothing to show</div>';
+}
+
+function retryWrong(){
+  const wrong=examQs.filter((q,i)=>answers[i]===undefined||answers[i]!==q.answer);
+  if(!wrong.length)return;
+  examQs=shuf(wrong); idx=0; answers={};
+  clearInterval(timerInt); timerSec=0;
+  if(mode==='exam') timerInt=setInterval(()=>{timerSec++;updTimer();},1000);
+  show('exam'); renderQ();
+}
+
+function goHome(){clearInterval(timerInt);show('home');}
+function goResults(){show('results');renderResults();}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+initHome();
+</script>
+</body>
+</html>
