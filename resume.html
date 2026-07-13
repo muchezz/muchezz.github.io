@@ -21,49 +21,56 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <style>
-    .resume-hero { padding-top: 130px; padding-bottom: 40px; }
-    .resume-hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); letter-spacing: -1.5px; margin: 0 0 10px; font-weight: 800; }
-    .resume-hero .role { font-family: var(--font-mono); color: var(--accent); font-size: 1.05rem; }
-    .resume-hero .contact-line { color: var(--text-dim); margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.92rem; }
-    .resume-hero .contact-line a { color: var(--text-dim); }
-    .resume-hero .contact-line a:hover { color: var(--accent); }
-    .resume-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
-    .resume-section { padding: 40px 0; border-top: 1px solid var(--border-soft); }
-    .resume-section:first-of-type { border-top: none; }
-    .resume-section > h2 {
-      font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase;
-      letter-spacing: 1.5px; color: var(--accent); margin: 0 0 26px;
-    }
+    body { background: var(--light); color: var(--light-text); }
+    .doc { max-width: 860px; margin: 0 auto; padding: 118px 24px 60px; }
+    .r-head h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 6px; color: var(--light-text); }
+    .r-head .role { font-family: var(--font-mono); color: var(--accent-deep); font-size: 1.05rem; }
+    .r-contact { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 16px; font-family: var(--font-mono); font-size: 0.86rem; color: var(--light-dim); }
+    .r-contact a { color: var(--light-dim); }
+    .r-contact a:hover { color: var(--accent-deep); }
+    .r-actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .r-section { padding: 34px 0; border-top: 1px solid var(--light-border); }
+    .r-section > h2 { font-family: var(--font-mono); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-deep); margin: 0 0 22px; }
+    .r-job { margin-bottom: 26px; }
+    .r-job:last-child { margin-bottom: 0; }
+    .r-job .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+    .r-job h3 { font-size: 1.12rem; margin: 0; color: var(--light-text); }
+    .r-job .when { font-family: var(--font-mono); font-size: 0.82rem; color: var(--light-mute); }
+    .r-job .co { font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-deep); margin: 3px 0 8px; }
+    .r-job ul { list-style: none; margin: 0; padding: 0; }
+    .r-job li { position: relative; padding-left: 22px; color: var(--light-dim); font-size: 0.93rem; margin-bottom: 7px; }
+    .r-job li::before { content: "▸"; position: absolute; left: 0; color: var(--accent-deep); }
+    .r-two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .r-edu h4 { margin: 0 0 2px; font-size: 1rem; color: var(--light-text); }
+    .r-edu .meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--light-mute); margin-bottom: 14px; }
+    .p, .p a { display: inline; }
+    @media (max-width: 640px) { .r-two { grid-template-columns: 1fr; gap: 24px; } }
     @media print {
-      body::before, .nav, .social-rail, .resume-actions, .footer { display: none !important; }
-      body { background: #fff; color: #111; }
-      .accent, .resume-hero .role, .resume-section > h2, .tl-head .company,
-      .edu-item li::marker, .tl-item li::marker { color: #0a7f63 !important; }
+      .nav, .r-actions, .footer { display: none !important; }
+      body { background: #fff; }
+      .doc { padding: 0; max-width: none; }
+      .r-section { padding: 20px 0; }
       a { color: #111 !important; }
-      .about-card, .cert-item { border-color: #ccc; background: #fff; box-shadow: none; }
-      section, .hero { padding: 0; }
-      .reveal { opacity: 1 !important; transform: none !important; }
+      .ptag { border-color: #ccc; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===================== NAV ===================== -->
   <header class="nav scrolled" id="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand">mucheru<span class="dot">.</span>dev</a>
+      <a href="index.html" class="brand">M<span class="g">M</span></a>
       <nav>
         <ul class="nav-links" id="navLinks">
-          <li><a href="index.html#about"><span class="idx">01.</span>About</a></li>
-          <li><a href="index.html#skills"><span class="idx">02.</span>Skills</a></li>
-          <li><a href="index.html#experience"><span class="idx">03.</span>Experience</a></li>
-          <li><a href="index.html#projects"><span class="idx">04.</span>Projects</a></li>
-          <li><a href="index.html#contact"><span class="idx">05.</span>Contact</a></li>
-          <li><a class="nav-cta" href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#credentials">Credentials</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -72,30 +79,30 @@
     </div>
   </header>
 
-  <main class="container" id="top">
-
-    <!-- ===================== HEADER ===================== -->
-    <section class="resume-hero">
-      <p class="role reveal visible">Resume</p>
-      <h1 class="reveal visible">Mucheru James Maina</h1>
-      <div class="reveal visible" style="color:var(--text-dim); font-size:1.05rem;">DevOps Engineer · AWS Community Builder</div>
-      <div class="contact-line reveal visible">
+  <main class="doc">
+    <div class="r-head">
+      <div class="role">// resume</div>
+      <h1>Mucheru James Maina</h1>
+      <div style="color:var(--light-dim);font-size:1.05rem;">DevOps Engineer · AWS Community Builder</div>
+      <div class="r-contact">
         <span>Nairobi, Kenya</span>
         <a href="tel:+254714869114">+254 714 869 114</a>
         <a href="mailto:mucheru@outlook.com">mucheru@outlook.com</a>
         <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">github.com/Muchezz</a>
         <a href="https://www.linkedin.com/in/mucheruj" target="_blank" rel="noopener noreferrer">linkedin.com/in/mucheruj</a>
       </div>
-      <div class="resume-actions reveal visible">
-        <button class="btn btn-solid" onclick="window.print()">Download / Print PDF</button>
-        <a class="btn btn-ghost" href="index.html#contact">Get in touch</a>
+      <div class="r-actions">
+        <button class="btn btn-solid" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          Download / Print PDF
+        </button>
+        <a class="btn btn-outline-light" href="index.html">Back to site</a>
       </div>
-    </section>
+    </div>
 
-    <!-- ===================== SUMMARY ===================== -->
-    <section class="resume-section reveal">
-      <h2>// Summary</h2>
-      <p style="color:var(--text-dim); max-width:760px; margin:0;">
+    <section class="r-section">
+      <h2>Summary</h2>
+      <p style="color:var(--light-dim);margin:0;">
         DevOps engineer with a networking background and 3+ years of Python programming. Hands-on
         experience supporting, automating, and optimising mission-critical deployments on AWS —
         leveraging configuration management, CI/CD, containerisation, and microservices. Strong
@@ -103,114 +110,76 @@
       </p>
     </section>
 
-    <!-- ===================== EXPERIENCE ===================== -->
-    <section class="resume-section reveal">
-      <h2>// Professional Experience</h2>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-head">
-            <h3>Cloud DevOps Engineer</h3>
-            <span class="company">@ Ponea Health</span>
-          </div>
-          <div class="tl-date">2022 — Present</div>
-          <ul>
-            <li>Create, configure, and maintain infrastructure on AWS cloud services.</li>
-            <li>Develop and maintain CI/CD pipelines with CircleCI and Jenkins.</li>
-            <li>Automate deployments with IaC tools such as Terraform, AWS SAM, and CloudFormation.</li>
-            <li>Deploy serverless applications with AWS SAM to Lambda.</li>
-          </ul>
-        </div>
-        <div class="tl-item">
-          <div class="tl-head">
-            <h3>Software Developer</h3>
-            <span class="company">@ BrightDrips, Nairobi</span>
-          </div>
-          <div class="tl-date">2021 — Present</div>
-          <ul>
-            <li>Design and deliver applications using Python.</li>
-            <li>Configuration management and deployment tooling.</li>
-            <li>Build and maintain AWS infrastructure — VPC, EC2, RDS, S3, Route&nbsp;53, SNS, CloudFront, CloudWatch, and IAM.</li>
-            <li>Implement CI/CD pipelines with CloudFormation and Terraform, plus Jenkins, Docker, and CircleCI for full commit-to-deploy automation.</li>
-          </ul>
-        </div>
-        <div class="tl-item">
-          <div class="tl-head">
-            <h3>System Administrator</h3>
-            <span class="company">@ Urithi, Nairobi</span>
-          </div>
-          <div class="tl-date">2016 — 2020</div>
-          <ul>
-            <li>Troubleshoot hardware and software errors — diagnostics, documentation, and impact assessment.</li>
-            <li>Provide documentation and technical specs for IT infrastructure planning and upgrades.</li>
-            <li>Maintain and configure computer systems, network servers, and virtualisation.</li>
-            <li>Perform regular backups and implement data protection, disaster recovery, and failover procedures.</li>
-          </ul>
-        </div>
+    <section class="r-section">
+      <h2>Professional Experience</h2>
+      <div class="r-job">
+        <div class="top"><h3>Cloud DevOps Engineer</h3><span class="when">2022 — Present</span></div>
+        <div class="co">Ponea Health</div>
+        <ul>
+          <li>Create, configure, and maintain infrastructure on AWS cloud services.</li>
+          <li>Develop and maintain CI/CD pipelines with CircleCI and Jenkins.</li>
+          <li>Automate deployments with Terraform, AWS SAM, and CloudFormation.</li>
+          <li>Deploy serverless applications with AWS SAM to Lambda.</li>
+        </ul>
+      </div>
+      <div class="r-job">
+        <div class="top"><h3>Software Developer</h3><span class="when">2021 — Present</span></div>
+        <div class="co">BrightDrips, Nairobi</div>
+        <ul>
+          <li>Design and deliver applications using Python.</li>
+          <li>Configuration management and deployment tooling.</li>
+          <li>Build and maintain AWS infrastructure — VPC, EC2, RDS, S3, Route&nbsp;53, SNS, CloudFront, CloudWatch, and IAM.</li>
+          <li>Implement CI/CD pipelines with CloudFormation and Terraform, plus Jenkins, Docker, and CircleCI for full commit-to-deploy automation.</li>
+        </ul>
+      </div>
+      <div class="r-job">
+        <div class="top"><h3>System Administrator</h3><span class="when">2016 — 2020</span></div>
+        <div class="co">Urithi, Nairobi</div>
+        <ul>
+          <li>Troubleshoot hardware and software errors — diagnostics, documentation, and impact assessment.</li>
+          <li>Provide documentation and technical specs for IT infrastructure planning and upgrades.</li>
+          <li>Maintain and configure computer systems, network servers, and virtualisation.</li>
+          <li>Perform regular backups and implement data protection, disaster recovery, and failover procedures.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===================== EDUCATION + CERTS ===================== -->
-    <section class="resume-section reveal">
-      <h2>// Education &amp; Certifications</h2>
-      <div class="split">
-        <div>
-          <div class="edu-item">
-            <h4>Cloud DevOps Nanodegree</h4>
-            <div class="meta">Udacity · 2021 — 2022</div>
-            <ul>
-              <li>Cloud fundamentals &amp; Infrastructure as Code</li>
-              <li>CI/CD pipelines, monitoring &amp; logging</li>
-              <li>Microservices at scale with AWS &amp; Kubernetes</li>
-            </ul>
-          </div>
-          <div class="edu-item">
-            <h4>BSc, Computer Science</h4>
-            <div class="meta">Meru University of Science and Technology · 2011 — 2015</div>
-            <ul>
-              <li>Data structures, algorithms &amp; computational complexity</li>
-              <li>Object-oriented programming</li>
-              <li>Computer networks, security &amp; database systems</li>
-            </ul>
-          </div>
+    <section class="r-section">
+      <h2>Education &amp; Certifications</h2>
+      <div class="r-two">
+        <div class="r-edu">
+          <h4>Cloud DevOps Nanodegree</h4>
+          <div class="meta">Udacity · 2021 — 2022</div>
+          <h4>BSc, Computer Science</h4>
+          <div class="meta">Meru University of Science and Technology · 2011 — 2015</div>
         </div>
         <div>
-          <div class="cert-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span>AWS Certified Cloud Practitioner</span>
-          </div>
-          <div class="cert-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span>Udacity — Cloud DevOps Engineer</span>
-          </div>
-          <div class="cert-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-            <span>AWS Community Builder</span>
-          </div>
+          <ul style="list-style:none;margin:0;padding:0;">
+            <li style="position:relative;padding-left:22px;color:var(--light-dim);margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--accent-deep);">▸</span>AWS Certified Cloud Practitioner</li>
+            <li style="position:relative;padding-left:22px;color:var(--light-dim);margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--accent-deep);">▸</span>Udacity — Cloud DevOps Engineer</li>
+            <li style="position:relative;padding-left:22px;color:var(--light-dim);"><span style="position:absolute;left:0;color:var(--accent-deep);">▸</span>AWS Community Builder</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SKILLS ===================== -->
-    <section class="resume-section reveal">
-      <h2>// Technical Skills</h2>
-      <div class="tags">
-        <span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">Docker</span>
-        <span class="tag">Terraform</span><span class="tag">CloudFormation</span><span class="tag">Ansible</span>
-        <span class="tag">Jenkins</span><span class="tag">CircleCI</span><span class="tag">AWS Lambda</span>
-        <span class="tag">AWS SAM</span><span class="tag">Python</span><span class="tag">Django</span>
-        <span class="tag">Flask</span><span class="tag">Bash</span><span class="tag">Linux</span>
-        <span class="tag">Grafana</span><span class="tag">Prometheus</span><span class="tag">Microservices</span>
-        <span class="tag">Git</span><span class="tag">Data Structures</span><span class="tag">Algorithms</span>
-        <span class="tag">Quality Assurance</span><span class="tag">Testing</span>
+    <section class="r-section">
+      <h2>Technical Skills</h2>
+      <div class="project-tags" style="margin:0;">
+        <span class="ptag">AWS</span><span class="ptag">Kubernetes</span><span class="ptag">Docker</span>
+        <span class="ptag">Terraform</span><span class="ptag">CloudFormation</span><span class="ptag">Ansible</span>
+        <span class="ptag">Jenkins</span><span class="ptag">CircleCI</span><span class="ptag">AWS Lambda</span>
+        <span class="ptag">AWS SAM</span><span class="ptag">Python</span><span class="ptag">Django</span>
+        <span class="ptag">Flask</span><span class="ptag">Bash</span><span class="ptag">Linux</span>
+        <span class="ptag">Grafana</span><span class="ptag">Prometheus</span><span class="ptag">Microservices</span>
+        <span class="ptag">Git</span><span class="ptag">Quality Assurance</span><span class="ptag">Testing</span>
       </div>
     </section>
-
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="container">
-      <p>Designed &amp; built by <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">Mucheru Maina</a> · &copy; <span id="year"></span></p>
+    <div class="wrap">
+      <p>Built by <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">Mucheru Maina</a> · &copy; <span id="year"></span></p>
     </div>
   </footer>
 
@@ -223,17 +192,6 @@
       toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    var reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
-        });
-      }, { threshold: 0.1 });
-      reveals.forEach(function (el) { io.observe(el); });
-    } else {
-      reveals.forEach(function (el) { el.classList.add('visible'); });
-    }
   </script>
 
 </body>

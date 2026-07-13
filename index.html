@@ -11,7 +11,6 @@
   <meta name="keywords" content="DevOps Engineer, AWS, Kubernetes, Docker, Terraform, CI/CD, Cloud Infrastructure, Mucheru Maina">
   <meta name="author" content="Mucheru Maina">
 
-  <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mucheru Maina - DevOps Engineer & AWS Community Builder">
   <meta property="og:description" content="DevOps Engineer with expertise in AWS, Kubernetes, Docker, Terraform, and CI/CD pipelines.">
@@ -23,7 +22,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 
@@ -32,15 +31,14 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#top" class="brand">mucheru<span class="dot">.</span>dev</a>
+      <a href="#top" class="brand">M<span class="g">M</span></a>
       <nav>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#about"><span class="idx">01.</span>About</a></li>
-          <li><a href="#skills"><span class="idx">02.</span>Skills</a></li>
-          <li><a href="#experience"><span class="idx">03.</span>Experience</a></li>
-          <li><a href="#projects"><span class="idx">04.</span>Projects</a></li>
-          <li><a href="#contact"><span class="idx">05.</span>Contact</a></li>
-          <li><a class="nav-cta" href="resume.html">Resume</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -50,7 +48,7 @@
   </header>
 
   <!-- ===================== SOCIAL RAIL ===================== -->
-  <div class="social-rail" aria-hidden="false">
+  <div class="social-rail">
     <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
     </a>
@@ -65,339 +63,364 @@
     </a>
   </div>
 
-  <main class="container" id="top">
-
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" id="home">
-      <p class="eyebrow reveal">Hi, my name is</p>
-      <h1 class="reveal">
-        Mucheru Maina.
-        <span class="sub">I build &amp; automate the cloud.</span>
-      </h1>
-      <p class="lead reveal">
-        I'm a <strong>DevOps Engineer</strong> and <strong>AWS Community Builder</strong> based in Nairobi,
-        Kenya. I specialise in supporting, automating, and optimising mission-critical deployments on AWS —
-        with configuration management, CI/CD, containerisation, and microservices.
+  <!-- ===================== HERO ===================== -->
+  <section class="hero section-dark" id="top">
+    <pre class="hero-code" aria-hidden="true">const engineer = {
+  name: 'Mucheru Maina',
+  role: 'DevOps Engineer',
+  stack: ['AWS', 'Kubernetes',
+          'Terraform', 'Python'],
+  available: true,
+};</pre>
+    <div class="hero-inner">
+      <span class="whoami-pill"><span class="prompt">$</span> whoami</span>
+      <h1>Mucheru <span class="last">Maina</span></h1>
+      <div class="hero-role">DevOps Engineer<span class="cursor"></span></div>
+      <p class="hero-bio">
+        DevOps Engineer &amp; AWS Community Builder based in Nairobi, Kenya. I support, automate,
+        and optimise mission-critical deployments on AWS — with configuration management, CI/CD,
+        containerisation, and microservices. 3+ years building reliable cloud infrastructure.
       </p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-solid" href="#contact">Get in touch</a>
-        <a class="btn btn-ghost" href="resume.html">View full resume</a>
-      </div>
-      <div class="hero-meta reveal">
-        <span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </span>
-        <span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-          Open to opportunities
-        </span>
-        <span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-          AWS Certified
-        </span>
-      </div>
-    </section>
 
-    <!-- ===================== ABOUT ===================== -->
-    <section id="about">
-      <div class="section-head reveal">
-        <h2><span class="num">01.</span>About Me</h2>
-        <span class="line"></span>
-      </div>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I'm a DevOps engineer with a background in networking and <strong>3+ years of Python
-            programming</strong>. I have hands-on experience supporting, automating, and optimising
-            mission-critical deployments in AWS — leveraging configuration management, CI/CD,
-            containerisation, and microservices.
-          </p>
-          <p>
-            I'm experienced in creating, configuring, and maintaining infrastructure on AWS cloud
-            services including <strong>VPC, EC2, RDS, S3, Route&nbsp;53, SNS, CloudFront, CloudWatch,
-            and IAM</strong>. I care about building reliable, repeatable systems and clean automation
-            that lets teams ship with confidence.
-          </p>
-          <p>
-            My toolbox spans Linux, Bash, Python, Ansible, Docker, Terraform, and Jenkins — and I'm
-            always sharpening it. Here are a few of the technologies I work with day to day:
-          </p>
-          <div class="tags" style="margin-top:6px;">
-            <span class="tag">AWS</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Python</span>
-            <span class="tag">CI/CD</span>
-          </div>
+      <!-- Interactive terminal -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="title">mucheru@cloud — zsh</span>
         </div>
-        <aside class="about-card reveal">
-          <h3>// Quick facts</h3>
-          <div class="info-row"><span class="label">Name</span><span class="val">Mucheru James Maina</span></div>
-          <div class="info-row"><span class="label">Role</span><span class="val">DevOps Engineer</span></div>
-          <div class="info-row"><span class="label">Location</span><span class="val">Nairobi, Kenya</span></div>
-          <div class="info-row"><span class="label">Focus</span><span class="val">Cloud &amp; Automation</span></div>
-          <div class="info-row"><span class="label">Email</span><span class="val">mucheru@outlook.com</span></div>
-          <div class="info-row"><span class="label">Status</span><span class="val">Available for work</span></div>
-        </aside>
+        <div class="terminal-body" id="term">
+          <div class="line out">Welcome. Type a command below to explore.</div>
+          <div class="line"><span class="p">$</span><span class="cmd" id="termCursor"></span></div>
+        </div>
+        <div class="terminal-chips">
+          <span class="chip" data-cmd="whoami">whoami</span>
+          <span class="chip" data-cmd="ls">ls</span>
+          <span class="chip" data-cmd="cat skills.yml">cat skills.yml</span>
+          <span class="chip" data-cmd="cat experience.log">cat experience.log</span>
+          <span class="chip" data-cmd="open resume">open resume</span>
+        </div>
       </div>
-    </section>
 
-    <!-- ===================== SKILLS ===================== -->
-    <section id="skills">
-      <div class="section-head reveal">
-        <h2><span class="num">02.</span>Skills &amp; Tech Stack</h2>
-        <span class="line"></span>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#experience">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          View Experience
+        </a>
+        <a class="btn btn-outline-dark" href="resume.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download CV
+        </a>
+        <a class="btn btn-outline-dark" href="#contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/></svg>
+          Get in touch
+        </a>
       </div>
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-            Cloud &amp; Infrastructure
-          </h3>
-          <div class="tags">
-            <span class="tag">AWS</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">CloudFormation</span>
-            <span class="tag">AWS Lambda</span>
-            <span class="tag">AWS SAM</span>
-            <span class="tag">VPC / EC2 / S3</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 8-4 4 4 4"/><path d="m17 8 4 4-4 4"/><path d="m14 4-4 16"/></svg>
-            CI/CD &amp; Containers
-          </h3>
-          <div class="tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">CircleCI</span>
-            <span class="tag">Ansible</span>
-            <span class="tag">Git</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-            Programming
-          </h3>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Django</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Bash</span>
-            <span class="tag">Data Structures</span>
-            <span class="tag">Algorithms</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            Observability
-          </h3>
-          <div class="tags">
-            <span class="tag">Grafana</span>
-            <span class="tag">Prometheus</span>
-            <span class="tag">CloudWatch</span>
-            <span class="tag">Nagios</span>
-            <span class="tag">New Relic</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
-            Architecture
-          </h3>
-          <div class="tags">
-            <span class="tag">Microservices</span>
-            <span class="tag">Serverless</span>
-            <span class="tag">IaC</span>
-            <span class="tag">Config Management</span>
-            <span class="tag">Linux</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11-6 6v3h9l3-3"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
-            Quality &amp; Testing
-          </h3>
-          <div class="tags">
-            <span class="tag">Quality Assurance</span>
-            <span class="tag">Testing</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===================== EXPERIENCE ===================== -->
-    <section id="experience">
-      <div class="section-head reveal">
-        <h2><span class="num">03.</span>Experience</h2>
-        <span class="line"></span>
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section section-light" id="about">
+    <div class="wrap">
+      <span class="eyebrow reveal">// ABOUT ME</span>
+      <h2 class="section-title reveal">Professional Profile</h2>
+      <p class="section-lead reveal">
+        DevOps engineer with a networking background and 3+ years of Python programming. I build,
+        automate, and optimise infrastructure on AWS — leveraging configuration management, CI/CD,
+        containerisation, and microservices to keep delivery reliable and repeatable. I care about
+        clean automation and systems teams can trust.
+      </p>
+      <div class="feature-grid">
+        <div class="feature-card hot reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          </div>
+          <h3>Cloud &amp; Infrastructure</h3>
+          <p>I design and maintain AWS infrastructure — VPC, EC2, RDS, S3, Route&nbsp;53, IAM and more — with Terraform, CloudFormation, and AWS SAM as an Infrastructure-as-Code first practice.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 8-4 4 4 4"/><path d="m17 8 4 4-4 4"/><path d="m14 4-4 16"/></svg>
+          </div>
+          <h3>CI/CD &amp; Automation</h3>
+          <p>I build commit-to-deploy pipelines with CircleCI and Jenkins, containerise workloads with Docker and Kubernetes, and automate configuration with Ansible.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18 22 12 16 6"/><path d="M8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Programming</h3>
+          <p>3+ years of Python across Django and Flask, plus Bash scripting. I deliver serverless applications to AWS Lambda and write the automation that ties infrastructure together.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </div>
+          <h3>Observability</h3>
+          <p>I keep systems visible and healthy with Grafana, Prometheus, CloudWatch, Nagios, and New Relic — monitoring, logging, and alerting so issues surface before users feel them.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section section-light" id="experience" style="border-top:1px solid var(--light-border);">
+    <div class="wrap">
+      <span class="eyebrow reveal">// CAREER JOURNEY</span>
+      <h2 class="section-title reveal">Professional Experience</h2>
       <div class="timeline">
-        <div class="tl-item reveal">
-          <div class="tl-head">
+        <div class="tl-row right reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div>
+              <span class="tl-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+                2022 — Present
+              </span>
+              <span class="tl-badge">Current</span>
+            </div>
             <h3>Cloud DevOps Engineer</h3>
-            <span class="company">@ Ponea Health</span>
+            <span class="tl-company">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Ponea Health
+            </span>
+            <ul>
+              <li>Create, configure, and maintain infrastructure on AWS cloud services.</li>
+              <li>Develop and maintain CI/CD pipelines with CircleCI and Jenkins.</li>
+              <li>Automate deployments with Terraform, AWS SAM, and CloudFormation.</li>
+              <li>Deploy serverless applications with AWS SAM to Lambda.</li>
+            </ul>
           </div>
-          <div class="tl-date">2022 — Present</div>
-          <ul>
-            <li>Create, configure, and maintain infrastructure on AWS cloud services.</li>
-            <li>Develop and maintain CI/CD pipelines with CircleCI and Jenkins.</li>
-            <li>Automate deployments with IaC tools such as Terraform, AWS SAM, and CloudFormation.</li>
-            <li>Deploy serverless applications with AWS SAM to Lambda.</li>
-          </ul>
         </div>
-        <div class="tl-item reveal">
-          <div class="tl-head">
+
+        <div class="tl-row left reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div>
+              <span class="tl-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+                2021 — Present
+              </span>
+            </div>
             <h3>Software Developer</h3>
-            <span class="company">@ BrightDrips, Nairobi</span>
+            <span class="tl-company">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              BrightDrips, Nairobi
+            </span>
+            <ul>
+              <li>Design and deliver applications using Python.</li>
+              <li>Build and maintain AWS infrastructure — VPC, EC2, RDS, S3, Route&nbsp;53, SNS, CloudFront, CloudWatch, IAM.</li>
+              <li>Implement CI/CD with CloudFormation, Terraform, Jenkins, Docker, and CircleCI for full automation.</li>
+              <li>Configuration management and deployment tooling.</li>
+            </ul>
           </div>
-          <div class="tl-date">2021 — Present</div>
-          <ul>
-            <li>Design and deliver applications using Python.</li>
-            <li>Configuration management and deployment tooling.</li>
-            <li>Build and maintain AWS infrastructure — VPC, EC2, RDS, S3, Route&nbsp;53, SNS, CloudFront, CloudWatch, and IAM.</li>
-            <li>Implement CI/CD pipelines with CloudFormation and Terraform, plus Jenkins, Docker, and CircleCI for full commit-to-deploy automation.</li>
-          </ul>
         </div>
-        <div class="tl-item reveal">
-          <div class="tl-head">
+
+        <div class="tl-row right reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div>
+              <span class="tl-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+                2016 — 2020
+              </span>
+            </div>
             <h3>System Administrator</h3>
-            <span class="company">@ Urithi, Nairobi</span>
-          </div>
-          <div class="tl-date">2016 — 2020</div>
-          <ul>
-            <li>Troubleshoot hardware and software errors — running diagnostics, documenting problems and resolutions, and assessing impact.</li>
-            <li>Provide documentation and technical specs for planning and implementing IT infrastructure upgrades.</li>
-            <li>Maintain and configure computer systems, network servers, and virtualisation.</li>
-            <li>Perform regular backups and implement data protection, disaster recovery, and failover procedures.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== EDUCATION + CERTS ===================== -->
-    <section id="education">
-      <div class="section-head reveal">
-        <h2><span class="num">04.</span>Education &amp; Certifications</h2>
-        <span class="line"></span>
-      </div>
-      <div class="split">
-        <div class="reveal">
-          <h3 class="block-title">// Education</h3>
-          <div class="edu-item">
-            <h4>Cloud DevOps Nanodegree</h4>
-            <div class="meta">Udacity · 2021 — 2022</div>
+            <span class="tl-company">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Urithi, Nairobi
+            </span>
             <ul>
-              <li>Cloud fundamentals</li>
-              <li>Deploy Infrastructure as Code (IaC)</li>
-              <li>CI/CD pipelines, monitoring &amp; logging</li>
-              <li>Microservices at scale with AWS &amp; Kubernetes</li>
-            </ul>
-          </div>
-          <div class="edu-item">
-            <h4>BSc, Computer Science</h4>
-            <div class="meta">Meru University of Science and Technology · 2011 — 2015</div>
-            <ul>
-              <li>Data structures &amp; algorithms, computational complexity</li>
-              <li>Object-oriented programming</li>
-              <li>Computer networks &amp; security</li>
-              <li>Database management systems &amp; operating systems</li>
+              <li>Troubleshoot hardware and software errors — diagnostics, documentation, and impact assessment.</li>
+              <li>Provide documentation and technical specs for IT infrastructure upgrades.</li>
+              <li>Maintain and configure computer systems, network servers, and virtualisation.</li>
+              <li>Run backups and implement data protection, disaster recovery, and failover.</li>
             </ul>
           </div>
         </div>
-        <div class="reveal">
-          <h3 class="block-title">// Certifications</h3>
-          <div class="cert-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span>AWS Certified Cloud Practitioner</span>
-          </div>
-          <div class="cert-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span>Udacity — Cloud DevOps Engineer</span>
-          </div>
-          <div class="cert-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-            <span>AWS Community Builder</span>
-          </div>
-
-          <h3 class="block-title" style="margin-top:34px;">// Verified Badges</h3>
-          <div class="badges-wrap">
-            <div data-iframe-width="140" data-iframe-height="240" data-share-badge-id="7b692b55-d99e-4628-bb34-22aab223c5fe" data-share-badge-host="https://www.credly.com"></div>
-            <div data-iframe-width="140" data-iframe-height="240" data-share-badge-id="23d97d5a-c643-4ed1-9d06-f1e43978feaa" data-share-badge-host="https://www.credly.com"></div>
-            <div data-iframe-width="140" data-iframe-height="240" data-share-badge-id="5ac6735c-dcc8-4024-b053-982e90da43f0" data-share-badge-host="https://www.credly.com"></div>
-            <div data-iframe-width="140" data-iframe-height="240" data-share-badge-id="9df8703c-1325-41b5-bcfe-e721ab41545d" data-share-badge-host="https://www.credly.com"></div>
-            <div data-iframe-width="140" data-iframe-height="240" data-share-badge-id="fe55755c-d87d-4106-8544-4fb7e518444a" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===================== PROJECTS ===================== -->
-    <section id="projects">
-      <div class="section-head reveal">
-        <h2><span class="num">05.</span>Featured Projects</h2>
-        <span class="line"></span>
-      </div>
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section section-light" id="projects" style="border-top:1px solid var(--light-border);">
+    <div class="wrap">
+      <span class="eyebrow reveal">// SIDE PROJECTS</span>
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <p class="section-lead reveal">
+        A selection of work spanning cloud infrastructure, automation, and web — from AWS DevOps
+        pipelines to full-stack sites.
+      </p>
       <div class="projects-grid">
         <article class="project-card reveal">
-          <div class="project-media">
-            <img src="assets/images/illustration-of-an-ai-bot-abstractly-connected-to-a-phone.webp" alt="AWS Cloud DevOps Nanodegree projects" loading="lazy">
+          <div class="project-icon" style="background:linear-gradient(135deg,#f97316,#fb923c);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
           </div>
-          <div class="project-body">
-            <div class="kicker">Cloud / DevOps</div>
-            <h3>AWS Cloud DevOps Nanodegree</h3>
-            <p>
-              A collection of projects covering Infrastructure as Code, CI/CD pipelines,
-              containerisation, and running microservices at scale on AWS &amp; Kubernetes.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/Muchezz/AWS-Cloud-DevOps-Nanodegree" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-                Source
-              </a>
-            </div>
+          <h3>AWS Cloud DevOps Nanodegree</h3>
+          <p>Projects covering Infrastructure as Code, CI/CD pipelines, containerisation, and running microservices at scale on AWS &amp; Kubernetes.</p>
+          <div class="project-tags">
+            <span class="ptag">AWS</span><span class="ptag">Kubernetes</span><span class="ptag">Terraform</span><span class="ptag">CI/CD</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Muchezz/AWS-Cloud-DevOps-Nanodegree" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              Source
+            </a>
           </div>
         </article>
 
         <article class="project-card reveal">
-          <div class="project-media">
-            <img src="assets/images/mazeltov.png" alt="Photography portfolio website" loading="lazy">
+          <div class="project-icon" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
-          <div class="project-body">
-            <div class="kicker">Web</div>
-            <h3>Photography Portfolio</h3>
-            <p>
-              A clean, responsive portfolio site built and deployed to showcase a photographer's
-              work — with a focus on fast loading and a polished visual gallery.
-            </p>
-            <div class="project-links">
-              <a href="https://wanjohi.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                Live site
-              </a>
-            </div>
+          <h3>Photography Portfolio</h3>
+          <p>A clean, responsive portfolio site built and deployed to showcase a photographer's work, with a focus on fast loading and a polished gallery.</p>
+          <div class="project-tags">
+            <span class="ptag">HTML/CSS</span><span class="ptag">JavaScript</span><span class="ptag">Netlify</span>
+          </div>
+          <div class="project-links">
+            <a href="https://wanjohi.netlify.app/" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+              Live site
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#22c55e,#4ade80);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m8 9 3 3-3 3M14 15h3"/></svg>
+          </div>
+          <h3>Infrastructure as Code</h3>
+          <p>Reusable Terraform and CloudFormation stacks for provisioning AWS environments — networking, compute, and serverless — wired into automated pipelines.</p>
+          <div class="project-tags">
+            <span class="ptag">Terraform</span><span class="ptag">CloudFormation</span><span class="ptag">AWS SAM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              GitHub
+            </a>
           </div>
         </article>
       </div>
-    </section>
+      <div class="center-btn reveal">
+        <a class="btn btn-outline-light" href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          View More on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact" class="contact">
-      <p class="num-lead reveal">06. What's next?</p>
-      <h2 class="reveal">Get In Touch</h2>
-      <p class="reveal">
-        I'm available for consulting, contract, or other opportunities on short to medium notice.
-        Whether you have a question or just want to say hi, my inbox is always open — I'll do my best
-        to get back to you.
+  <!-- ===================== CREDENTIALS ===================== -->
+  <section class="section section-light" id="credentials" style="border-top:1px solid var(--light-border);">
+    <div class="wrap">
+      <span class="eyebrow reveal">// CREDENTIALS</span>
+      <h2 class="section-title reveal">Certifications &amp; Education</h2>
+      <div class="cred-grid">
+        <div class="reveal">
+          <div class="cred-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              Professional Certifications
+            </h3>
+            <div class="cred-item">
+              <span class="badge-ic">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </span>
+              <div><h4>AWS Certified Cloud Practitioner</h4><div class="sub">Amazon Web Services</div></div>
+            </div>
+            <div class="cred-item">
+              <span class="badge-ic">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </span>
+              <div><h4>Cloud DevOps Engineer</h4><div class="sub">Udacity Nanodegree</div></div>
+            </div>
+            <div class="cred-item">
+              <span class="badge-ic">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+              </span>
+              <div><h4>AWS Community Builder</h4><div class="sub">Amazon Web Services</div></div>
+            </div>
+          </div>
+          <div class="cred-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15h6M9 11h2"/></svg>
+              Verified Badges
+            </h3>
+            <div class="badges-wrap">
+              <div data-iframe-width="130" data-iframe-height="220" data-share-badge-id="7b692b55-d99e-4628-bb34-22aab223c5fe" data-share-badge-host="https://www.credly.com"></div>
+              <div data-iframe-width="130" data-iframe-height="220" data-share-badge-id="23d97d5a-c643-4ed1-9d06-f1e43978feaa" data-share-badge-host="https://www.credly.com"></div>
+              <div data-iframe-width="130" data-iframe-height="220" data-share-badge-id="5ac6735c-dcc8-4024-b053-982e90da43f0" data-share-badge-host="https://www.credly.com"></div>
+              <div data-iframe-width="130" data-iframe-height="220" data-share-badge-id="9df8703c-1325-41b5-bcfe-e721ab41545d" data-share-badge-host="https://www.credly.com"></div>
+              <div data-iframe-width="130" data-iframe-height="220" data-share-badge-id="fe55755c-d87d-4106-8544-4fb7e518444a" data-share-badge-host="https://www.credly.com"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="cred-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Education
+            </h3>
+            <div class="edu-line">
+              <h4>Cloud DevOps Nanodegree</h4>
+              <div class="school">Udacity — IaC, CI/CD, monitoring, microservices on AWS &amp; Kubernetes</div>
+              <div class="yr">2021 — 2022</div>
+            </div>
+            <div class="edu-line">
+              <h4>BSc, Computer Science</h4>
+              <div class="school">Meru University of Science and Technology</div>
+              <div class="yr">2011 — 2015</div>
+            </div>
+          </div>
+          <div class="cred-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 8-4 4 4 4"/><path d="m17 8 4 4-4 4"/><path d="m14 4-4 16"/></svg>
+              Core Stack
+            </h3>
+            <div class="project-tags" style="margin:0;">
+              <span class="ptag">AWS</span><span class="ptag">Kubernetes</span><span class="ptag">Docker</span>
+              <span class="ptag">Terraform</span><span class="ptag">CloudFormation</span><span class="ptag">Ansible</span>
+              <span class="ptag">Jenkins</span><span class="ptag">CircleCI</span><span class="ptag">Python</span>
+              <span class="ptag">Django</span><span class="ptag">Flask</span><span class="ptag">Linux</span>
+              <span class="ptag">Grafana</span><span class="ptag">Prometheus</span><span class="ptag">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section section-dark" id="contact">
+    <div class="wrap">
+      <span class="eyebrow reveal">// LET'S CONNECT</span>
+      <h2 class="section-title reveal" style="color:var(--dark-text);">Get In Touch</h2>
+      <p class="section-lead reveal">
+        I'm available for consulting, contract, or full-time opportunities on short to medium notice.
+        Whether it's cloud architecture, DevOps, or just tech talk — my inbox is always open.
       </p>
-      <a class="btn btn-solid reveal" href="mailto:mucheru@outlook.com">Say hello</a>
+      <div class="chat reveal">
+        <div class="chat-head">
+          <div class="chat-avatar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+          </div>
+          <div>
+            <div class="name">Mucheru Maina</div>
+            <div class="status">Online now</div>
+          </div>
+        </div>
+        <div class="bubble">Hey there! 👋</div>
+        <div class="bubble">I'd love to help with your next cloud or DevOps project.</div>
+        <div class="bubble me">Whether it's AWS, CI/CD, Kubernetes, or automation — let's talk.</div>
+        <div class="chat-cta">
+          <a class="btn btn-solid" href="mailto:mucheru@outlook.com">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            Start a conversation
+          </a>
+        </div>
+      </div>
       <div class="contact-social reveal">
         <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
@@ -412,30 +435,24 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
         </a>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="container">
-      <p>Designed &amp; built by <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">Mucheru Maina</a> · &copy; <span id="year"></span></p>
+    <div class="wrap">
+      <p>Built by <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">Mucheru Maina</a> · &copy; <span id="year"></span></p>
     </div>
   </footer>
 
-  <!-- Credly badge embed -->
   <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
 
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Navbar background on scroll
+    // Navbar scroll state
     var nav = document.getElementById('nav');
-    var onScroll = function () {
-      if (window.scrollY > 20) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 20); };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
@@ -448,28 +465,55 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) {
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      if (e.target.closest('a')) { links.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
     });
 
-    // Scroll-reveal animations
+    // Interactive terminal
+    var term = document.getElementById('term');
+    var responses = {
+      'whoami': ['Mucheru James Maina — DevOps Engineer & AWS Community Builder', 'Nairobi, Kenya'],
+      'ls': ['about/   skills.yml   experience.log   projects/   contact/'],
+      'cat skills.yml': ['cloud:    [AWS, Terraform, CloudFormation, Lambda]', 'cicd:     [Docker, Kubernetes, Jenkins, CircleCI, Ansible]', 'code:     [Python, Django, Flask, Bash]', 'observe:  [Grafana, Prometheus, CloudWatch]'],
+      'cat experience.log': ['2022-Present  Cloud DevOps Engineer  @ Ponea Health', '2021-Present  Software Developer     @ BrightDrips', '2016-2020     System Administrator   @ Urithi'],
+      'open resume': ['Opening resume…']
+    };
+    function typeCmd(cmd) {
+      // remove trailing input line
+      var inputLine = term.querySelector('.line:last-child');
+      var cmdSpan = document.createElement('div');
+      cmdSpan.className = 'line';
+      cmdSpan.innerHTML = '<span class="p">$</span><span class="cmd"></span>';
+      term.insertBefore(cmdSpan, inputLine);
+      var target = cmdSpan.querySelector('.cmd');
+      var i = 0;
+      var typer = setInterval(function () {
+        target.textContent = cmd.slice(0, ++i);
+        term.scrollTop = term.scrollHeight;
+        if (i >= cmd.length) {
+          clearInterval(typer);
+          (responses[cmd] || ['command not found']).forEach(function (line) {
+            var out = document.createElement('div');
+            out.className = 'line out';
+            out.textContent = line;
+            term.insertBefore(out, inputLine);
+          });
+          term.scrollTop = term.scrollHeight;
+          if (cmd === 'open resume') setTimeout(function () { window.location.href = 'resume.html'; }, 500);
+        }
+      }, 45);
+    }
+    document.querySelectorAll('.chip').forEach(function (chip) {
+      chip.addEventListener('click', function () { typeCmd(chip.getAttribute('data-cmd')); });
+    });
+
+    // Scroll reveal
     var reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       reveals.forEach(function (el) { io.observe(el); });
-    } else {
-      reveals.forEach(function (el) { el.classList.add('visible'); });
-    }
+    } else { reveals.forEach(function (el) { el.classList.add('visible'); }); }
   </script>
 
 </body>
