@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/icons8-newtonsoft-128.png" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/images/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-180.png">
 
   <meta name="description" content="Mucheru Maina - DevOps Engineer & AWS Community Builder with expertise in AWS, Kubernetes, Docker, Terraform, and CI/CD pipelines. Available for consulting and contract opportunities.">
   <meta name="keywords" content="DevOps Engineer, AWS, Kubernetes, Docker, Terraform, CI/CD, Cloud Infrastructure, Mucheru Maina">
@@ -271,21 +273,21 @@
       <span class="eyebrow reveal">// SIDE PROJECTS</span>
       <h2 class="section-title reveal">Featured Projects</h2>
       <p class="section-lead reveal">
-        A selection of work spanning cloud infrastructure, automation, and web — from AWS DevOps
-        pipelines to full-stack sites.
+        Open-source and personal projects spanning Kubernetes operators, platform tooling, and
+        full-stack applications.
       </p>
       <div class="projects-grid">
         <article class="project-card reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#f97316,#fb923c);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          <div class="project-icon" style="background:linear-gradient(135deg,#326ce5,#5b8def);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
-          <h3>AWS Cloud DevOps Nanodegree</h3>
-          <p>Projects covering Infrastructure as Code, CI/CD pipelines, containerisation, and running microservices at scale on AWS &amp; Kubernetes.</p>
+          <h3>Kubernetes PDB Operator</h3>
+          <p>A Kubernetes operator that automates PodDisruptionBudget management at scale — policy-driven availability classes, label/namespace targeting, strict/flexible/advisory enforcement, automatic cleanup, and maintenance windows, with native Prometheus metrics and OpenTelemetry tracing.</p>
           <div class="project-tags">
-            <span class="ptag">AWS</span><span class="ptag">Kubernetes</span><span class="ptag">Terraform</span><span class="ptag">CI/CD</span>
+            <span class="ptag">Go</span><span class="ptag">Kubernetes</span><span class="ptag">Operator SDK</span><span class="ptag">CRDs</span><span class="ptag">Prometheus</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Muchezz/AWS-Cloud-DevOps-Nanodegree" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/pdb-operator/pdb-operator" target="_blank" rel="noopener noreferrer">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
               Source
             </a>
@@ -293,16 +295,33 @@
         </article>
 
         <article class="project-card reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div class="project-icon" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
           </div>
-          <h3>Photography Portfolio</h3>
-          <p>A clean, responsive portfolio site built and deployed to showcase a photographer's work, with a focus on fast loading and a polished gallery.</p>
+          <h3>Graylog → Mattermost Webhook</h3>
+          <p>A webhook integration that forwards Graylog alerts and log notifications into Mattermost channels, giving teams real-time visibility into incidents where they already collaborate.</p>
           <div class="project-tags">
-            <span class="ptag">HTML/CSS</span><span class="ptag">JavaScript</span><span class="ptag">Netlify</span>
+            <span class="ptag">Graylog</span><span class="ptag">Mattermost</span><span class="ptag">Webhooks</span><span class="ptag">Alerting</span>
           </div>
           <div class="project-links">
-            <a href="https://wanjohi.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/muchezz/graylog-mattermost-webhook" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              Source
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#15803d,#22c55e);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>AssureRP</h3>
+          <p>A marketplace connecting vetted ERP specialists (SAP, Odoo, NetSuite, Dynamics) with the companies that need them — with milestone-based escrow payments, verified skill badges, and mediated dispute resolution built into every engagement.</p>
+          <div class="project-tags">
+            <span class="ptag">Marketplace</span><span class="ptag">Escrow</span><span class="ptag">ERP</span><span class="ptag">Vercel</span>
+          </div>
+          <div class="project-links">
+            <a href="https://assurerp.vercel.app/" target="_blank" rel="noopener noreferrer">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
               Live site
             </a>
@@ -310,18 +329,18 @@
         </article>
 
         <article class="project-card reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#22c55e,#4ade80);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m8 9 3 3-3 3M14 15h3"/></svg>
+          <div class="project-icon" style="background:linear-gradient(135deg,#ea580c,#fb923c);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <h3>Infrastructure as Code</h3>
-          <p>Reusable Terraform and CloudFormation stacks for provisioning AWS environments — networking, compute, and serverless — wired into automated pipelines.</p>
+          <h3>StudyZora</h3>
+          <p>An AI-powered study tool that turns lecture notes, slides, and past papers into flashcards, auto-marked practice questions, study notes, and a tutor that knows your material — tailored to the exam you're actually sitting (KCSE, CBC, university, or pro certs).</p>
           <div class="project-tags">
-            <span class="ptag">Terraform</span><span class="ptag">CloudFormation</span><span class="ptag">AWS SAM</span>
+            <span class="ptag">AI</span><span class="ptag">EdTech</span><span class="ptag">Claude AI</span><span class="ptag">Vercel</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Muchezz" target="_blank" rel="noopener noreferrer">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-              GitHub
+            <a href="https://studyzora.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+              Live site
             </a>
           </div>
         </article>
