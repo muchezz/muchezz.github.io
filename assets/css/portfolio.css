@@ -276,6 +276,10 @@ h1, h2, h3, h4, .heading { font-family: var(--font-mono); font-weight: 700; lett
 .social-rail a:hover { color: var(--accent-bright); transform: translateY(-3px); }
 
 /* ---------- About / feature cards ---------- */
+.about-bio { max-width: 760px; margin: 0 auto 60px; }
+.about-bio p { color: var(--light-dim); font-size: 1.05rem; margin: 0 0 20px; text-align: left; }
+.about-bio p:last-child { margin-bottom: 0; }
+.about-bio strong { color: var(--light-text); font-weight: 600; }
 .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 940px; margin: 0 auto; }
 .feature-card {
   background: var(--light-2);
